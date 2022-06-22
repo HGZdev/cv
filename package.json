@@ -75,7 +75,7 @@
     "sequelize": "^6.5.0",
     "sequelize-cli": "^6.2.0",
     "serve-favicon": "^2.5.0",
-    "sqlite3": "^5.0.1",
+    "sqlite3": "^5.0.3",
     "style-loader": "^2.0.0",
     "styled-components": "^5.2.1",
     "webpack": "^5.20.2",
