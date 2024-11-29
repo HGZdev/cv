@@ -7,14 +7,14 @@ import Hero from "../AppComponents/Hero";
 import getConfig from "./getConfig";
 import useScrollToTop from "./useScrollToTop";
 
-const {BASE_URL} = getConfig();
+const {VITE_BASE_URL} = getConfig();
 
 const WrapRoute: React.FC = () => {
   useTrackPageViewsInGA();
   const scrollableRef = useRef<HTMLDivElement>(null);
 
   useScrollToTop(scrollableRef);
-  const imgPath = `${BASE_URL}/images/bg.webp`;
+  const imgPath = `${VITE_BASE_URL}/images/bg.webp`;
 
   return (
     <BgContainer imagePath={imgPath} className="flex justify-center bg-[300%]">

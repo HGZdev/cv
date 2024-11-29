@@ -34,7 +34,7 @@ const IconLink = ({
   </Link>
 );
 
-const {BASE_URL} = getConfig();
+const {VITE_BASE_URL} = getConfig();
 
 interface HeroBgContainerProps {
   className?: string;
@@ -45,7 +45,7 @@ const HeroBgContainer: React.FC<HeroBgContainerProps> = ({
   className,
   children,
 }) => {
-  const imagePath = `${BASE_URL}/images/portrait.webp`;
+  const imagePath = `${VITE_BASE_URL}/images/portrait.webp`;
   return (
     <div
       className={`relative bg-clip-border bg-no-repeat bg-cover bg-[calc(50%+30px)_center] xl:bg-center ${className}`}

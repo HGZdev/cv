@@ -54,7 +54,7 @@ export const linkedIn =
   "https://www.linkedin.com/in/hanna-gaudasinska-zapasnik";
 export const github = "https://github.com/HGZdev";
 
-export const pdfPath = "public/docs/Hanna_Gaudasinska_Zapasnik_CV.pdf";
+export const pdfPath = "/docs/Hanna_Gaudasinska_Zapasnik_CV.pdf";
 
 export const aboutText = (
   <>

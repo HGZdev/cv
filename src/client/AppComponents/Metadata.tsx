@@ -5,7 +5,8 @@ import {fullName} from "../contentDb";
 const {BASE_URL, VITE_APP_NAME} = getConfig();
 
 const Metadata = () => {
-  if (!BASE_URL) throw new Error("root: BASE_URL is undefined");
+  if (BASE_URL === undefined)
+    throw new Error("Metadata: BASE_URL is undefined");
   if (!VITE_APP_NAME) throw new Error("root: VITE_APP_NAME is undefined");
 
   return (

@@ -10,7 +10,7 @@ import getConfig from "../Components/getConfig";
 import {BiWrench} from "react-icons/bi";
 import {pdfPath} from "../contentDb";
 
-const {BASE_URL} = getConfig();
+const {BASE_URL, VITE_BASE_URL} = getConfig();
 
 const Icon = ({
   Cmp,
@@ -56,7 +56,7 @@ const Menu = () => {
           <Icon Cmp={PiGraduationCap} isActive={isActive("/education")} />
         </Link>
       </div>
-      <a href={pdfPath} target="_blank">
+      <a href={`${VITE_BASE_URL}${pdfPath}`} target="_blank">
         <Icon Cmp={MdOutlineFileDownload} />
       </a>
     </div>
