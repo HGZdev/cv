@@ -27,7 +27,7 @@ import {
   MdOutlineStarBorder,
 } from "react-icons/md";
 
-const {BASE_URL} = getConfig();
+const {VITE_BASE_URL} = getConfig();
 
 const LeftHeadline = ({headline}: {headline: string}) => (
   <h2
@@ -45,7 +45,7 @@ const LeftRatingSection = ({headline, blocks}: SectionProps) => (
         <div className="flex flex-col gap-[0.1rem] ">
           {b.list
             ?.filter((l) => !l.hidden)
-            .map(({title, desc, stars = 0, Icon}) => (
+            .map(({title, stars = 0, Icon}) => (
               <div className="flex justify-between">
                 {/* logo */}
                 <div className="flex text-onPrimary gap-2">
@@ -56,10 +56,10 @@ const LeftRatingSection = ({headline, blocks}: SectionProps) => (
                 </div>
                 {/* rating */}
                 <div className="flex gap-1">
-                  {Array.from({length: stars}, (_, i) => (
+                  {Array.from({length: stars}, (_) => (
                     <MdOutlineStar size={12} className="text-[#e8edff]" />
                   ))}
-                  {Array.from({length: 5 - stars}, (_, i) => (
+                  {Array.from({length: 5 - stars}, (_) => (
                     <MdOutlineStarBorder
                       size={12}
                       className="text-onBackground"
@@ -108,7 +108,7 @@ const LeftHeader = () => {
 };
 
 const LeftPortrait = () => {
-  const imagePath = `${BASE_URL}/images/portrait2.webp`;
+  const imagePath = `${VITE_BASE_URL}/images/portrait2.webp`;
   return (
     <div
       className={`bg-no-repeat bg-[calc(50%+10px)_center] bg-[length:130%] mx-4`}
@@ -326,7 +326,7 @@ const Resume = () => {
   //   }
   // };
 
-  const imagePath = `${BASE_URL}/images/bg.webp`;
+  const imagePath = `${VITE_BASE_URL}/images/bg.webp`;
   return (
     <BgContainer
       data-theme="resume"
@@ -336,7 +336,7 @@ const Resume = () => {
       <div className="w-[210mm] flex items-start gap-2">
         <button
           className="bg-onPrimary text-[#252F51] rounded-sm px-2"
-          onClick={handlePrint}
+          onClick={() => handlePrint()}
         >
           <PiPrinter />
         </button>

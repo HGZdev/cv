@@ -31,6 +31,7 @@ export const RoutesConfig = (
       <Route path="*" element={<ErrorPage />} />
     </Route>
     <Route path={`${BASE_URL}/resume`} element={<Resume />} />
+    <Route path="*" element={<ErrorPage />} />
   </>
 );
 
@@ -43,7 +44,7 @@ const router =
     : createBrowserRouter(routes);
 
 const Root: React.FC = () => {
-  if (!BASE_URL) throw new Error("root: BASE_URL is undefined");
+  if (BASE_URL === undefined) throw new Error("root: BASE_URL is undefined");
 
   return (
     <>

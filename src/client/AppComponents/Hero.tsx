@@ -1,5 +1,4 @@
 import {Link} from "react-router-dom";
-import BgContainer from "../Components/BgContainer";
 import getConfig from "../Components/getConfig";
 import {FaGithub, FaLinkedinIn} from "react-icons/fa";
 import {MdOutlineEmail, MdPhoneIphone} from "react-icons/md";

@@ -25,10 +25,19 @@ import {BiLogoRedux, BiLogoTypescript} from "react-icons/bi";
 import getConfig from "../../Components/getConfig";
 import ContentHeader from "../../AppComponents/ContentHeader";
 import {aboutGithubInvitation, aboutText} from "../../contentDb";
+import {type IconType} from "react-icons";
 
 const {BASE_URL} = getConfig();
 
-export const IconWithTooltip = ({Icon, title, size = 36}) => {
+export const IconWithTooltip = ({
+  Icon,
+  title,
+  size = 36,
+}: {
+  Icon: IconType;
+  title: string;
+  size?: number;
+}) => {
   return (
     <div className="relative group flex flex-col items-center gap-1 w-12">
       <Icon
@@ -82,7 +91,7 @@ const Intro = () => {
       <ContentHeader
         {...{
           title: "about me",
-          tags: ["Front-end Focus", "Back-End Support", "Warsaw, Poland"],
+          tags: ["Front-End Focus", "Back-End Support", "Warsaw, Poland"],
         }}
       />
       <span className="flex flex-col gap-3 text-body-medium text-onTertiary ">

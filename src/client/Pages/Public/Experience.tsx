@@ -10,9 +10,9 @@ export const Block = ({
   text,
   list,
 }: {
-  title: string;
-  subtitle: string;
-  startDate: string;
+  title?: string;
+  subtitle?: string;
+  startDate?: string;
   endDate?: string;
   text?: string;
   list?: string[];
@@ -47,7 +47,7 @@ const Experience = () => {
           title: "experience",
           tags: [
             "Seven years of coding experience",
-            "Product management",
+            "Product Management",
             "Client Liaison",
             "Market Research Experience",
           ],

@@ -26,10 +26,10 @@ export const Block = ({Icon, title, stars = 0}: BlockProps) => (
       </span>
     </div>
     <div className="flex gap-1">
-      {Array.from({length: stars}, (_, i) => (
+      {Array.from({length: stars}, (_) => (
         <MdOutlineStar size={22} className="text-onSecondary" />
       ))}
-      {Array.from({length: 5 - stars}, (_, i) => (
+      {Array.from({length: 5 - stars}, (_) => (
         <MdOutlineStarBorder size={22} className="text-onBackground" />
       ))}
     </div>
@@ -69,8 +69,8 @@ const Skills = () => {
         {...{
           title: "skills",
           tags: [
-            "Versatile Front-end Proficiency",
-            "Back-end Experience",
+            "Versatile Front-End Proficiency",
+            "Back-End Experience",
             "Tool-Driven Workflow",
           ],
         }}
