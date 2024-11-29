@@ -4,10 +4,10 @@
 
 My introduction website.
 
-## Technologies used in this project:
+## Tech stack:
 
-- HTML5
-- Styled Components
-- JavaScript (ES6)
+- Typescript
 - React.js
-- Webpack
+- Tailwind / styled-components
+- Vite/Vitest
+- Testing Library
