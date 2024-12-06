@@ -1,13 +1,20 @@
 # My Curriculum Vitae
 
-**Link:** https://hgzdev.github.io/cv
+Welcome to my personal introduction website, where you can learn more about my professional background and skills.
 
-My introduction website.
+**Live Site:** [hgzdev.github.io/cv](https://hgzdev.github.io/cv)
 
-## Tech stack:
+## Technologies Used
 
-- Typescript
-- React.js
-- Tailwind / styled-components
-- Vite/Vitest
-- Testing Library
+- **TypeScript**
+- **React.js**
+- **Tailwind CSS** and **Styled Components**
+- **Vite** for development and **Vitest** for testing
+- **Testing Library** for unit and integration tests
+
+## Features
+
+- **Responsive Design:** Ensures optimal viewing across various devices.
+- **Interactive UI:** Provides an engaging user experience.
+- **Modular Codebase:** Facilitates easy maintenance and scalability.
+
