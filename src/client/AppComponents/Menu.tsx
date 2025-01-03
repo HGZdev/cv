@@ -1,17 +1,20 @@
-import type {IconType} from "react-icons";
+import {useLocation} from "react-router-dom";
 import {
   MdOutlineFileDownload,
   MdOutlinePersonOutline,
   MdOutlineWorkOutline,
 } from "react-icons/md";
 import {PiGraduationCap} from "react-icons/pi";
-import {Link, useLocation} from "react-router-dom";
-import getConfig from "../Components/getConfig";
 import {BiWrench} from "react-icons/bi";
-import {pdfPath} from "../contentDb";
 import {twMerge} from "tailwind-merge";
+import LangLink from "../Components/LangLink";
+import LangSwitcher from "./LangSwitcher";
+import getConfig from "../Components/getConfig";
+import {pdfPath} from "../contentDb";
+import {type IconType} from "react-icons";
+import {useLang} from "../../../lib/i18n";
 
-const {BASE_URL, VITE_BASE_URL} = getConfig();
+const {VITE_BASE_URL, BASE_URL} = getConfig();
 
 const Icon = ({
   Cmp,
@@ -22,7 +25,7 @@ const Icon = ({
   Cmp: IconType;
   size?: number;
   className?: string;
-  isActive?: boolean;
+  isActive: boolean;
 }) => (
   <div
     className={twMerge(
@@ -36,31 +39,36 @@ const Icon = ({
 );
 
 const Menu = () => {
+  const {lang} = useLang();
   const {pathname} = useLocation();
-  const isActive = (path: string) => pathname === `${BASE_URL}${path}`;
+
+  const isActiveRoute = (path: string) =>
+    pathname === `${BASE_URL}/${lang}${path}`;
 
   return (
     <div className="flex flex-col justify-center items-center h-full py-8 md:bg-secondary">
-      <div className="text-onSecondary md:text-[24px] font-bold">HGZ</div>
+      <div className="text-onSecondary md:text-[24px] font-bold">
+        <LangSwitcher />
+      </div>
       <div className="flex flex-col justify-center items-center h-full gap-3">
-        <Link to={`${BASE_URL}/`}>
+        <LangLink to="/">
+          <Icon Cmp={MdOutlinePersonOutline} isActive={isActiveRoute("/")} />
+        </LangLink>
+        <LangLink to="/skills">
+          <Icon Cmp={BiWrench} size={26} isActive={isActiveRoute("/skills")} />
+        </LangLink>
+        <LangLink to="/experience">
           <Icon
-            Cmp={MdOutlinePersonOutline}
-            isActive={pathname === BASE_URL || pathname === `${BASE_URL}/`}
+            Cmp={MdOutlineWorkOutline}
+            isActive={isActiveRoute("/experience")}
           />
-        </Link>
-        <Link to={`${BASE_URL}/skills`}>
-          <Icon Cmp={BiWrench} isActive={isActive("/skills")} size={26} />
-        </Link>
-        <Link to={`${BASE_URL}/experience`}>
-          <Icon Cmp={MdOutlineWorkOutline} isActive={isActive("/experience")} />
-        </Link>
-        <Link to={`${BASE_URL}/education`}>
-          <Icon Cmp={PiGraduationCap} isActive={isActive("/education")} />
-        </Link>
+        </LangLink>
+        <LangLink to="/education">
+          <Icon Cmp={PiGraduationCap} isActive={isActiveRoute("/education")} />
+        </LangLink>
       </div>
       <a href={`${VITE_BASE_URL}${pdfPath}`} target="_blank">
-        <Icon Cmp={MdOutlineFileDownload} />
+        <Icon Cmp={MdOutlineFileDownload} isActive={isActiveRoute("/resume")} />
       </a>
     </div>
   );

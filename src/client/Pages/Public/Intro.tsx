@@ -3,7 +3,6 @@ import {Divider} from "../../AppComponents/Divider";
 import {DiCss3Full, DiHtml5} from "react-icons/di";
 import {FaGitSquare, FaNode, FaSass} from "react-icons/fa";
 import {GrGraphQl, GrReactjs} from "react-icons/gr";
-import {Link} from "react-router-dom";
 import {
   SiAffinity,
   SiCoreldraw,
@@ -22,22 +21,21 @@ import {VscGithubProject, VscVscode} from "react-icons/vsc";
 import {RiJavascriptFill, RiTailwindCssLine} from "react-icons/ri";
 import {FiFigma} from "react-icons/fi";
 import {BiLogoRedux, BiLogoTypescript} from "react-icons/bi";
-import getConfig from "../../Components/getConfig";
 import ContentHeader from "../../AppComponents/ContentHeader";
-import {aboutGithubInvitation, aboutText} from "../../contentDb";
+import {useLang} from "../../../../lib/i18n";
+import LangLink from "../../Components/LangLink";
 import {type IconType} from "react-icons";
-
-const {BASE_URL} = getConfig();
 
 export const IconWithTooltip = ({
   Icon,
-  title,
+  titleKey,
   size = 36,
 }: {
   Icon: IconType;
-  title: string;
+  titleKey: string;
   size?: number;
 }) => {
+  const {getText} = useLang();
   return (
     <div className="relative group flex flex-col items-center gap-1 w-12">
       <Icon
@@ -45,58 +43,92 @@ export const IconWithTooltip = ({
         className="group-hover:text-onPrimary hover:scale-110 transition-transform duration-200"
       />
       <span className="text-label-small text-onPrimary text-center whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-        {title}
+        {getText(titleKey)}
       </span>
     </div>
   );
 };
 
 const IconList = () => (
-  <Link
-    to={`${BASE_URL}/skills`}
+  <LangLink
+    to="/skills"
     className="flex flex-wrap gap-1 justify-center text-onTertiary"
   >
-    <IconWithTooltip Icon={GrReactjs} title="React.js" />
-    <IconWithTooltip Icon={RiJavascriptFill} title="JavaScript" />
-    <IconWithTooltip Icon={BiLogoTypescript} title="TypeScript" />
-    <IconWithTooltip Icon={SiVite} title="Vite" />
-    <IconWithTooltip Icon={SiQwik} title="Qwik" />
-    <IconWithTooltip Icon={SiWebpack} title="Webpack" />
-    <IconWithTooltip Icon={DiHtml5} title="HTML5" />
-    <IconWithTooltip Icon={DiCss3Full} title="CSS3" />
-    <IconWithTooltip Icon={RiTailwindCssLine} title="Tailwind CSS" />
-    <IconWithTooltip Icon={SiStyledcomponents} title="Styled-components" />
-    <IconWithTooltip Icon={FaSass} title="SASS" />
-    <IconWithTooltip Icon={FaNode} title="Node.js" />
-    <IconWithTooltip Icon={GrGraphQl} title="GraphQL" />
-    <IconWithTooltip Icon={SiSqlite} title="SQLite" />
-    <IconWithTooltip Icon={SiFirebase} title="Firebase" />
-    <IconWithTooltip Icon={BiLogoRedux} title="Redux" />
-    <IconWithTooltip Icon={SiVitest} title="Vitest" />
-    <IconWithTooltip Icon={SiJest} title="Jest" />
-    <IconWithTooltip Icon={SiTestinglibrary} title="Testing Library" />
-    <IconWithTooltip Icon={SiCypress} title="Cypress" />
-    <IconWithTooltip Icon={FaGitSquare} title="Git" />
-    <IconWithTooltip Icon={VscGithubProject} title="GitHub Projects" />
-    <IconWithTooltip Icon={VscVscode} title="VS Code" />
-    <IconWithTooltip Icon={FiFigma} title="Figma" />
-    <IconWithTooltip Icon={SiAffinity} title="Affinity Photo" />
-    <IconWithTooltip Icon={SiCoreldraw} title="Corel Photo" />
-  </Link>
+    <IconWithTooltip Icon={GrReactjs} titleKey="technologies_react_title" />
+    <IconWithTooltip
+      Icon={RiJavascriptFill}
+      titleKey="technologies_javascript_title"
+    />
+    <IconWithTooltip
+      Icon={BiLogoTypescript}
+      titleKey="technologies_typescript_title"
+    />
+    <IconWithTooltip Icon={SiVite} titleKey="technologies_vite_title" />
+    <IconWithTooltip Icon={SiQwik} titleKey="technologies_qwik_title" />
+    <IconWithTooltip Icon={SiWebpack} titleKey="technologies_webpack_title" />
+    <IconWithTooltip Icon={DiHtml5} titleKey="technologies_html_title" />
+    <IconWithTooltip Icon={DiCss3Full} titleKey="technologies_css_title" />
+    <IconWithTooltip
+      Icon={RiTailwindCssLine}
+      titleKey="technologies_tailwind_title"
+    />
+    <IconWithTooltip
+      Icon={SiStyledcomponents}
+      titleKey="technologies_styled_components_title"
+    />
+    <IconWithTooltip Icon={FaSass} titleKey="technologies_sass_title" />
+    <IconWithTooltip Icon={FaNode} titleKey="technologies_nodejs_title" />
+    <IconWithTooltip Icon={GrGraphQl} titleKey="technologies_graphql_title" />
+    <IconWithTooltip Icon={SiSqlite} titleKey="technologies_sqlite_title" />
+    <IconWithTooltip Icon={SiFirebase} titleKey="technologies_firebase_title" />
+    <IconWithTooltip Icon={BiLogoRedux} titleKey="technologies_redux_title" />
+    <IconWithTooltip Icon={SiVitest} titleKey="technologies_vitest_title" />
+    <IconWithTooltip Icon={SiJest} titleKey="technologies_jest_title" />
+    <IconWithTooltip
+      Icon={SiTestinglibrary}
+      titleKey="technologies_testing_library_title"
+    />
+    <IconWithTooltip Icon={SiCypress} titleKey="technologies_cypress_title" />
+    <IconWithTooltip Icon={FaGitSquare} titleKey="tools_git_title" />
+    <IconWithTooltip
+      Icon={VscGithubProject}
+      titleKey="tools_github_projects_title"
+    />
+    <IconWithTooltip Icon={VscVscode} titleKey="tools_vscode_title" />
+    <IconWithTooltip Icon={FiFigma} titleKey="tools_figma_title" />
+    <IconWithTooltip Icon={SiAffinity} titleKey="tools_affinity_photo_title" />
+    <IconWithTooltip Icon={SiCoreldraw} titleKey="tools_corel_photo_title" />
+  </LangLink>
 );
 
 const Intro = () => {
+  const {getText} = useLang();
   return (
     <AnimatedContainer className="p-4 md:p-8 bg-primary">
       <ContentHeader
         {...{
-          title: "about me",
-          tags: ["Front-End Focus", "Back-End Support", "Warsaw, Poland"],
+          title: getText("about_title"),
+          tags: [
+            getText("about_tag_1"),
+            getText("about_tag_2"),
+            getText("about_tag_3"),
+          ],
         }}
       />
-      <span className="flex flex-col gap-3 text-body-medium text-onTertiary ">
-        {aboutText}
-        {aboutGithubInvitation}
+      <span className="flex flex-col gap-3 text-body-medium text-onTertiary">
+        <p>{getText("about_text_paragraph_1")}</p>
+        <p>{getText("about_text_paragraph_2")}</p>
+        <p>{getText("about_text_paragraph_3")}</p>
+        <p>
+          {getText("about_github_invitation_text")}{" "}
+          <a
+            href="https://github.com/HGZdev"
+            className="text-primaryResume underline underline-offset-2 hover:text-onPrimary"
+          >
+            {getText("about_github_link_text")}
+          </a>
+          .
+        </p>
       </span>
       <Divider />
       <IconList />
