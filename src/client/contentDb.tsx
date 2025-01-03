@@ -2,13 +2,14 @@ import {decodeString} from "./AppComponents/helpers";
 import {BiLogoRedux, BiLogoTypescript} from "react-icons/bi";
 import {type IconType} from "react-icons";
 import {DiCss3Full, DiHtml5} from "react-icons/di";
-import {FaGitSquare, FaNode, FaSass} from "react-icons/fa";
+import {FaGithub, FaGitSquare, FaNode, FaSass} from "react-icons/fa";
 import {GrGraphQl, GrReactjs} from "react-icons/gr";
 import {
   SiAffinity,
   SiCoreldraw,
   SiCypress,
   SiFirebase,
+  SiGithubactions,
   SiJest,
   SiQwik,
   SiSqlite,
@@ -23,23 +24,29 @@ import {RiNextjsFill, RiTailwindCssLine} from "react-icons/ri";
 import {FiFigma} from "react-icons/fi";
 import {TbSql} from "react-icons/tb";
 import {FaGitAlt} from "react-icons/fa6";
+import {TranslationKey} from "../../lib/i18n";
 
 export interface BlockProps {
   desc?: string;
+  descKey?: TranslationKey;
   endDate?: string;
   hidden?: boolean;
   Icon?: IconType;
   linkType?: string;
   list?: string[];
+  listKeys?: TranslationKey[];
   stars?: number;
   startDate?: string;
   subtitle?: string;
+  subtitleKey?: TranslationKey;
   text?: string;
+  textKey?: TranslationKey;
   title?: string;
+  titleKey?: TranslationKey;
 }
 
 export interface SectionProps {
-  headline: string;
+  headlineKey: TranslationKey;
   blocks: {list: BlockProps[]}[];
 }
 
@@ -57,163 +64,197 @@ export const github = "https://github.com/HGZdev";
 
 export const pdfPath = "/docs/Hanna_Gaudasinska_Zapasnik_CV.pdf";
 
-export const aboutText = (
-  <>
-    <p>
-      I am a software developer with seven years of experience specializing in
-      complex web development, with expertise spanning front-end and soft
-      back-end technologies.
-    </p>
-    <p>
-      Throughout my career, I have been involved in creating user interfaces,
-      managing client-server communication, designing database architectures,
-      testing, and occasionally overseeing project management. My prior
-      experience as a market researcher enhances my ability to act as a client
-      liaison, analyzing technological requirements, implementing
-      functionalities, and delivering training sessions.
-    </p>
-    <p>
-      I am seeking job opportunities that will allow me to maximize my potential
-      and further develop my skills and knowledge while working with experienced
-      mentors.
-    </p>
-  </>
-);
+export const aboutTextKeys: TranslationKey[] = [
+  "about_text_paragraph_1",
+  "about_text_paragraph_2",
+  "about_text_paragraph_3",
+];
 
-export const aboutGithubInvitation = (
-  <p>
-    I kindly invite you to look at my{" "}
-    <a
-      target="_blank"
-      href={github}
-      className="text-onSecondary hover:text-onPrimary transition-transform duration-200"
-    >
-      GitHub portfolio
-    </a>
-    .
-  </p>
-);
-
-export const aboutGithubInvitationCV = (
-  <p>
-    I kindly invite you to look at my{" "}
-    <a
-      target="_blank"
-      href={github}
-      className="underline underline-offset-2 under text-primaryResume hover:text-[#4e5e91]"
-    >
-      GitHub portfolio
-    </a>
-    .
-  </p>
-);
-
-export const consent =
-  "I hereby consent to the processing of my vital and personal data in so far as this is required under the recruitment campaign, in accordance with applicable data protection laws.";
+export const aboutGithubInvitationKeys: {
+  textKey: TranslationKey;
+  linkKey: TranslationKey;
+} = {
+  textKey: "about_github_invitation_text",
+  linkKey: "about_github_link_text",
+};
 
 export const personalSection: SectionProps = {
-  headline: "Personal information",
+  headlineKey: "personal_headline",
   blocks: [
     {
       list: [
-        {title: "Location", desc: "Warsaw, Poland"},
-        {title: "Phone", desc: phone, linkType: "tel:"},
         {
-          title: "E-mail",
-          desc: email,
-          linkType: "mailto:",
+          titleKey: "personal_location_title",
+          descKey: "personal_location_desc",
         },
+        {titleKey: "personal_phone_title", desc: phone, linkType: "tel:"},
+        {titleKey: "personal_email_title", desc: email, linkType: "mailto:"},
+        {titleKey: "personal_www_title", desc: www, linkType: ""},
+        {titleKey: "personal_github_title", desc: github, linkType: ""},
         {
-          title: "WWW",
-          desc: www,
+          titleKey: "personal_linkedin_title",
+          desc: linkedIn,
           linkType: "",
+          hidden: true,
         },
-        {title: "GitHub", desc: github, linkType: ""},
-        {title: "LinkedIn", desc: linkedIn, linkType: "", hidden: true},
       ],
     },
   ],
 };
 
 export const hobbiesSection: SectionProps = {
-  headline: "Hobbies",
+  headlineKey: "hobbies_headline",
   blocks: [
     {
-      list: [{desc: "DIY wonders, old worlds, new places"}],
+      list: [{descKey: "hobbies_desc"}],
     },
   ],
 };
 
 export const langSection: SectionProps = {
-  headline: "Languages",
+  headlineKey: "languages_headline",
   blocks: [
     {
       list: [
-        {title: "Polish", stars: 5, desc: "Native"},
-        {title: "English", stars: 4, desc: "Advanced"},
+        {
+          titleKey: "languages_polish_title",
+          stars: 5,
+          descKey: "languages_native_desc",
+        },
+        {
+          titleKey: "languages_english_title",
+          stars: 4,
+          descKey: "languages_advanced_desc",
+        },
       ],
     },
   ],
 };
 
 export const techSection: SectionProps = {
-  headline: "Technologies",
+  headlineKey: "technologies_headline",
   blocks: [
     {
       list: [
-        {Icon: BiLogoTypescript, title: "TypeScript", stars: 3},
-        {Icon: GrReactjs, title: "React.js", stars: 4},
-        {Icon: RiNextjsFill, title: "Next.js", stars: 2},
-        {Icon: SiWebpack, title: "Webpack", stars: 3},
-        {Icon: SiVite, title: "Vite", stars: 2},
-        {Icon: SiQwik, title: "Qwik", stars: 1, hidden: true},
+        {
+          Icon: BiLogoTypescript,
+          titleKey: "technologies_typescript_title",
+          stars: 3,
+        },
+        {Icon: GrReactjs, titleKey: "technologies_react_title", stars: 4},
+        {Icon: RiNextjsFill, titleKey: "technologies_nextjs_title", stars: 1},
+        {Icon: SiWebpack, titleKey: "technologies_webpack_title", stars: 3},
+        {Icon: SiVite, titleKey: "technologies_vite_title", stars: 2},
+        {
+          Icon: SiQwik,
+          titleKey: "technologies_qwik_title",
+          stars: 1,
+          hidden: true,
+        },
       ],
     },
     {
       list: [
-        {Icon: DiHtml5, title: "HTML", stars: 4, hidden: true},
-        {Icon: DiCss3Full, title: "CSS", stars: 4, hidden: true},
-        {Icon: RiTailwindCssLine, title: "Tailwind CSS", stars: 3},
+        {
+          Icon: DiHtml5,
+          titleKey: "technologies_html_title",
+          stars: 4,
+          hidden: true,
+        },
+        {
+          Icon: DiCss3Full,
+          titleKey: "technologies_css_title",
+          stars: 4,
+          hidden: true,
+        },
+        {
+          Icon: RiTailwindCssLine,
+          titleKey: "technologies_tailwind_title",
+          stars: 3,
+        },
         {
           Icon: SiStyledcomponents,
-          title: "Styled-comp.",
+          titleKey: "technologies_styled_components_short_title",
           stars: 4,
         },
-        {Icon: FaSass, title: "SASS", stars: 2, hidden: true},
+        {
+          Icon: FaSass,
+          titleKey: "technologies_sass_title",
+          stars: 2,
+          hidden: true,
+        },
       ],
     },
     {
       list: [
-        {Icon: FaNode, title: "Node.js", stars: 3},
-        {Icon: GrGraphQl, title: "GraphQL", stars: 4},
-        {Icon: TbSql, title: "SQL", stars: 3},
-        {Icon: SiSqlite, title: "SQLite", stars: 3},
-        {Icon: SiFirebase, title: "Firebase", stars: 2, hidden: true},
-        {Icon: BiLogoRedux, title: "Redux", stars: 2, hidden: true},
+        {Icon: FaNode, titleKey: "technologies_nodejs_title", stars: 3},
+        {Icon: GrGraphQl, titleKey: "technologies_graphql_title", stars: 4},
+        {Icon: TbSql, titleKey: "technologies_sql_title", stars: 3},
+        {Icon: SiSqlite, titleKey: "technologies_sqlite_title", stars: 3},
+        {
+          Icon: SiFirebase,
+          titleKey: "technologies_firebase_title",
+          stars: 2,
+          hidden: true,
+        },
+        {
+          Icon: BiLogoRedux,
+          titleKey: "technologies_redux_title",
+          stars: 2,
+          hidden: true,
+        },
       ],
     },
     {
       list: [
-        {Icon: SiJest, title: "Jest", stars: 4},
-        {Icon: SiVitest, title: "Vitest", stars: 4},
-        {Icon: SiTestinglibrary, title: "Testing library", stars: 3},
-        {Icon: SiCypress, title: "Cypress.js", stars: 2},
+        {Icon: SiJest, titleKey: "technologies_jest_title", stars: 4},
+        {Icon: SiVitest, titleKey: "technologies_vitest_title", stars: 4},
+        {
+          Icon: SiTestinglibrary,
+          titleKey: "technologies_testing_library_title",
+          stars: 3,
+        },
+        {Icon: SiCypress, titleKey: "technologies_cypress_title", stars: 2},
       ],
     },
   ],
 };
 
 export const toolsSection: SectionProps = {
-  headline: "Tools",
+  headlineKey: "tools_headline",
   blocks: [
     {
       list: [
-        {Icon: FaGitSquare, title: "Git", stars: 3},
-        {Icon: FaGitAlt, title: "GitUp", stars: 5},
-        {Icon: VscGithubProject, title: "Github Projects", stars: 5},
-        {Icon: FiFigma, title: "Figma", stars: 3},
-        {Icon: SiAffinity, title: "Affinity Photo", stars: 3, hidden: true},
-        {Icon: SiCoreldraw, title: "COREL Photo", stars: 2, hidden: true},
+        {Icon: FaGitSquare, titleKey: "tools_git_title", stars: 3},
+        {Icon: FaGitAlt, titleKey: "tools_gitup_title", stars: 4, hidden: true},
+        {
+          Icon: FaGithub,
+          titleKey: "tools_github_title",
+          stars: 4,
+        },
+        {
+          Icon: SiGithubactions,
+          titleKey: "tools_github_actions_title",
+          stars: 2,
+        },
+        {
+          Icon: VscGithubProject,
+          titleKey: "tools_github_projects_title",
+          stars: 4,
+        },
+        {Icon: FiFigma, titleKey: "tools_figma_title", stars: 3},
+        {
+          Icon: SiAffinity,
+          titleKey: "tools_affinity_photo_title",
+          stars: 3,
+          hidden: true,
+        },
+        {
+          Icon: SiCoreldraw,
+          titleKey: "tools_corel_photo_title",
+          stars: 2,
+          hidden: true,
+        },
       ],
     },
   ],
@@ -221,83 +262,73 @@ export const toolsSection: SectionProps = {
 
 export const jobBlock: BlockProps[] = [
   {
-    title: "StratoKit SA",
-    subtitle: "Full-stack Developer",
+    titleKey: "jobs_stratokit_title",
+    subtitleKey: "jobs_stratokit_subtitle",
     startDate: "04.2021",
-    endDate: "Ongoing",
-    list: [
-      "Maintenance of software integrations for the construction industry.",
-      "Full-stack development of web applications.",
-      "Project management (Github Projects).",
-      "Co-design of the apps architecture (SQLite, GraphQL, Node.js, Redux-like events flow).",
-      "Collaborated closely with clients to identify their needs and deliver tailored technical solutions (references available upon request).",
-      "Contributed to the migration of the codebase from React.js/Jest to Vite/Vitest.",
+    listKeys: [
+      "jobs_stratokit_responsibility_1",
+      "jobs_stratokit_responsibility_2",
+      "jobs_stratokit_responsibility_3",
+      "jobs_stratokit_responsibility_4",
+      "jobs_stratokit_responsibility_5",
+      "jobs_stratokit_responsibility_6",
     ],
   },
   {
-    title: "Yaska Polska Sp. z o.o.",
-    subtitle: "Software Developer",
+    titleKey: "jobs_yaska_title",
+    subtitleKey: "jobs_yaska_subtitle",
     startDate: "10.2017",
     endDate: "04.2021",
-    list: [
-      "Developed websites for Belgian companies and NGOs.",
-      "User interfaces creation (React.js, Final-form, styled-components, and more).",
-      "Full-coverage testing (Jest, Cypress.js).",
-      "Client liaison: recognition of needs and technological implementation.",
+    listKeys: [
+      "jobs_yaska_responsibility_1",
+      "jobs_yaska_responsibility_2",
+      "jobs_yaska_responsibility_3",
     ],
   },
   {
-    title: "VoiceMap PTE LTD – GPS audioguides",
-    text: "Created GPS-based audio guides, designing immersive experiences for tourists.",
+    titleKey: "jobs_voicemap_title",
+    textKey: "jobs_voicemap_text",
     startDate: "12.2016",
-    endDate: "Ongoing",
   },
   {
-    title: "TNS Polska S.A.",
-    subtitle: "Automotive Department - Junior Research Executive",
+    titleKey: "jobs_tns_title",
+    subtitleKey: "jobs_tns_subtitle",
     startDate: "05.2013",
     endDate: "05.2015",
-    list: [
-      "Preparation and coordination of quantitative surveys for leading automotive and oil companies.",
-      // "Preparation and coordination of quantitative, mystery shopping, and customer satisfaction surveys for leading automotive and oil companies.",
-      // "Coordination of TNS Garage Quality Check countrywide survey.",
-    ],
+    textKey: "jobs_tns_responsibility_1",
   },
   {
-    title: "ACNielsen Polska Sp. z o.o.",
-    subtitle:
-      "Manufacturer Client Service – Marketing Research Consulting Programme",
+    titleKey: "jobs_acnielsen_title",
+    subtitleKey: "jobs_acnielsen_subtitle",
     startDate: "09.2012",
     endDate: "03.2013",
-    list: [
-      "Market sales reports delivery and quantitative analysis for cosmetics and FMCG companies.",
-    ],
+    textKey: "jobs_acnielsen_responsibility_1",
   },
   {
-    title: "L’Oreal Polska Sp. z o.o.",
-    subtitle: "Media and Market Research Division – Internship",
+    titleKey: "jobs_loreal_title",
+    subtitleKey: "jobs_loreal_subtitle",
     startDate: "06.2010",
     endDate: "12.2010",
-    list: ["Cosmetics market analysis & client-side surveys coordination."],
+    textKey: "jobs_loreal_responsibility_1",
   },
 ];
 
 export const educationBlocks: BlockProps[] = [
   {
-    title: "Economic Science at University of Warsaw, Poland",
-    subtitle: "Master's Degree, Business Economics",
+    titleKey: "education_warsaw_economics_title",
+    subtitleKey: "education_warsaw_economics_subtitle",
     startDate: "09.2005",
     endDate: "07.2012",
   },
   {
-    title: "Sociology at University of Warsaw, Poland",
-    subtitle: "Master's Certificate of Completion, Social and Market Research",
+    titleKey: "education_warsaw_sociology_title",
+    subtitleKey: "education_warsaw_sociology_subtitle",
     startDate: "09.2007",
     endDate: "06.2012",
   },
   {
-    title: "Social Science at Maastricht University, Netherlands",
-    subtitle: "ERASMUS exchange programme",
+    titleKey: "education_maastricht_title",
+    subtitleKey: "education_maastricht_subtitle",
     startDate: "01.2010",
     endDate: "06.2010",
   },
@@ -305,32 +336,21 @@ export const educationBlocks: BlockProps[] = [
 
 export const workshopBlocks: BlockProps[] = [
   {
-    title: "Conference Google Developer Days in Krakow, Poland",
-    text: "Participation in workshops on PWA, Firebase and Google Maps tooling",
+    titleKey: "workshops_google_dev_days_title",
+    textKey: "workshops_google_dev_days_text",
     startDate: "09.2017",
     endDate: "09.2017",
-    list: [],
   },
   {
-    title: "Coders Lab – Bootcamp",
-    text: "Intensive Front-End Developer Training (240h)",
+    titleKey: "workshops_coders_lab_title",
+    textKey: "workshops_coders_lab_text",
     startDate: "04.2017",
     endDate: "06.2017",
-    list: [],
   },
   {
-    title: "Delfin English School, London, United Kingdom",
-    text: "General English Course, level: advanced C1+ (150h)",
-    startDate: "02.2016",
-    endDate: "06.2016",
-    list: [],
-    hidden: true,
-  },
-  {
-    title: "Open University of Warsaw – MS Excel & VBA course",
-    text: "MS Excel Work Automation with Macros and VBA (60 hours)",
-    startDate: "10.2014",
-    endDate: "11.2014",
-    list: [],
+    titleKey: "workshops_open_university_title",
+    textKey: "workshops_open_university_text",
+    startDate: "04.2017",
+    endDate: "06.2017",
   },
 ];
