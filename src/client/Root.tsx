@@ -72,7 +72,7 @@ const LangSpecificRoutes = (lang: I18nLang) => (
   </>
 );
 
-const createRoutes = (langs: I18nLang[], defaultLang: I18nLang) => {
+export const createRoutes = (langs: I18nLang[], defaultLang: I18nLang) => {
   const globalRoutes = createRoutesFromElements(GlobalRoutes(defaultLang));
   const langRoutes = langs
     .map((lang) => createRoutesFromElements(LangSpecificRoutes(lang)))
