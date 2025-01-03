@@ -29,10 +29,12 @@
   "include": [
     "**/*.d.ts",
     "./src",
+    "./data",
     "./lib",
     "./config",
     "build/config.ts",
-    "config/config.ts"
+    "config/config.ts",
+    "src/client/contentDb.tsx"
   ],
   "exclude": ["node_modules"]
 }

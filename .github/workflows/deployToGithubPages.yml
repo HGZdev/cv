@@ -30,18 +30,25 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Ensures full repository is fetched, avoiding any potential stale data
+
+      - name: Remove previous build files
+        run: rm -rf ./build # Cleans the build directory to prevent residual files
 
       - name: Install pnpm
         run: npm install -g pnpm
 
+      - name: Clear pnpm cache
+        run: pnpm store prune # Ensures fresh dependencies are installed
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: "pnpm"
+          node-version: 20 # Cache is omitted to ensure a clean environment
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --force # Forces reinstallation of dependencies
 
       - name: Build the project
         env:
