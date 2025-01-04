@@ -7,6 +7,7 @@ import {PiPrinter} from "react-icons/pi";
 import {
   BlockProps,
   educationBlocks,
+  fileName,
   fullName,
   github,
   hobbiesSection,
@@ -350,7 +351,6 @@ const CVPanel = ({lang}: {lang: I18nLang}) => (
 
 const Resume = () => {
   useTrackPageViewsInGA();
-  const fileName = `${fullName} - CV`;
 
   const cvRef = useRef<HTMLDivElement>(null);
   const handlePrint = useReactToPrint({
@@ -375,7 +375,7 @@ const Resume = () => {
 
         {/* <a
           className="bg-onPrimary text-primaryResume rounded-sm px-2"
-          href={"cv/docs/Hanna_Gaudasinska_Zapasnik_CV.pdf"}
+          href={`cv${pdfPath}`}
         >
           <MdOutlineFileDownload />
         </a> */}
