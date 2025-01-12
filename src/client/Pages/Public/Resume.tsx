@@ -380,7 +380,7 @@ const Resume = () => {
           <MdOutlineFileDownload />
         </a> */}
       </div>
-      <div ref={cvRef}>
+      <div ref={cvRef} className="bg-white">
         <CVPanel lang={"en"} />
         <CVPanel lang={"pl"} />
       </div>
