@@ -38,9 +38,13 @@ const translations: Translations = {
     en: "Location",
     pl: "Lokalizacja",
   },
-  personal_location_desc: {
+  location_warsaw: {
     en: "Warsaw, Poland",
-    pl: "Warszawa, Polska",
+    pl: "Warszawa",
+  },
+  location_krakow: {
+    en: "Krakow, Poland",
+    pl: "Kraków",
   },
   personal_phone_title: {
     en: "Phone",
@@ -94,6 +98,10 @@ const translations: Translations = {
     en: "Technologies",
     pl: "Technologie",
   },
+  technologies_HTML_CSS_title: {
+    en: "HTML/CSS",
+    pl: "HTML/CSS",
+  },
   technologies_typescript_title: {
     en: "TypeScript",
     pl: "TypeScript",
@@ -133,6 +141,10 @@ const translations: Translations = {
   technologies_styled_components_title: {
     en: "Styled-components",
     pl: "Styled-components",
+  },
+  technologies_material_ui: {
+    en: "Material UI",
+    pl: "Material UI",
   },
   technologies_styled_components_short_title: {
     en: "Styled-comp.",
@@ -287,41 +299,45 @@ const translations: Translations = {
     en: "VoiceMap PTE LTD – GPS audioguides",
     pl: "VoiceMap PTE LTD – GPS audioguides",
   },
+  jobs_voicemap_subtitle: {
+    en: "Creator / Storyteller",
+    pl: "Creator / Storyteller",
+  },
   jobs_voicemap_text: {
     en: "Created GPS-based audio guides, designing immersive experiences for tourists.",
     pl: "Tworzenie audioprzewodników turystycznych opartych na geolokalizacji.",
   },
   jobs_tns_title: {
-    en: "TNS Polska S.A.",
-    pl: "TNS Polska S.A.",
+    en: "TNS Polska S.A. - Automotive Department",
+    pl: "TNS Polska S.A. - Automotive Department",
   },
   jobs_tns_subtitle: {
-    en: "Automotive Department – Junior Research Executive",
-    pl: "Automotive Department – Junior Research Executive",
+    en: "Junior Research Executive",
+    pl: "Junior Research Executive",
   },
   jobs_tns_responsibility_1: {
     en: "Preparation and coordination of quantitative surveys for leading automotive and oil companies.",
     pl: "Przygotowanie i koordynacja badań ilościowych dla wiodących koncernów motoryzacyjnych i naftowych.",
   },
   jobs_acnielsen_title: {
-    en: "ACNielsen Polska Sp. z o.o.",
-    pl: "ACNielsen Polska Sp. z o.o.",
+    en: "ACNielsen Polska Sp. z o.o. - Manufacturer Client Service",
+    pl: "ACNielsen Polska Sp. z o.o. - Manufacturer Client Service",
   },
   jobs_acnielsen_subtitle: {
-    en: "Manufacturer Client Service – Marketing Research Consulting Programme – Internship",
-    pl: "Manufacturer Client Service – Marketing Research Consulting Programme – Staż",
+    en: "Internship",
+    pl: "Staż",
   },
   jobs_acnielsen_responsibility_1: {
     en: "Market sales reports delivery and quantitative analysis for cosmetics and FMCG companies.",
     pl: "Dostarczanie raportów sprzedażowych i analiza ilościowa dla firm kosmetycznych i FMCG.",
   },
   jobs_loreal_title: {
-    en: "L’Oreal Polska Sp. z o.o.",
-    pl: "L’Oreal Polska Sp. z o.o.",
+    en: "L’Oreal Polska Sp. z o.o. - Media and Market Research Division",
+    pl: "L’Oreal Polska Sp. z o.o. - Media and Market Research Division",
   },
   jobs_loreal_subtitle: {
-    en: "Media and Market Research Division – Internship",
-    pl: "Media and Market Research Division – Praktyka",
+    en: "Internship",
+    pl: "Staż",
   },
   jobs_loreal_responsibility_1: {
     en: "Cosmetics market analysis & client-side surveys coordination.",
@@ -352,44 +368,52 @@ const translations: Translations = {
     pl: "Warsztaty i Szkolenia",
   },
   education_warsaw_economics_title: {
-    en: "Economic Science at University of Warsaw, Poland",
-    pl: "Wydział Nauk Ekonomicznych Uniwersytetu Warszawskiego",
+    en: "Economic Science, University of Warsaw, Poland",
+    pl: "Wydział Nauk Ekonomicznych, Uniwersytet Warszawski",
   },
   education_warsaw_economics_subtitle: {
-    en: "Master's Degree, Business Economics",
-    pl: "Magister Ekonomii, kierunek: Ekonomia Przedsiębiorczości",
+    en: "Master’s in Business Economics",
+    pl: "Magister Ekonomii Przedsiębiorczości",
   },
   education_warsaw_sociology_title: {
-    en: "Sociology at University of Warsaw, Poland",
-    pl: "Instytut Socjologii Uniwersytetu Warszawskiego",
+    en: "Sociology, University of Warsaw, Poland",
+    pl: "Instytut Socjologii, Uniwersytet Warszawski",
   },
   education_warsaw_sociology_subtitle: {
-    en: "Master's Certificate of Completion, Social and Market Research",
+    en: "Master’s Certificate in Social & Market Research",
     pl: "Absolutorium magisterskie, kierunek: Badania Społeczne i Rynkowe",
   },
   education_maastricht_title: {
-    en: "Social Science at Maastricht University, Netherlands",
-    pl: "Nauki Społeczne na Uniwersytecie w Maastricht, Holandia",
+    en: "Social Science, Maastricht University, Netherlands",
+    pl: "Nauki Społeczne, Uniwersytet w Maastricht, Holandia",
   },
   education_maastricht_subtitle: {
     en: "ERASMUS exchange programme",
     pl: "Program wymiany ERASMUS",
   },
   workshops_google_dev_days_title: {
-    en: "Conference Google Developer Days in Krakow, Poland",
-    pl: "Konferencja Google Developer Days w Krakowie",
+    en: "Conference Google Developer Days",
+    pl: "Konferencja Google Developer Days",
+  },
+  workshops_google_dev_days_subtitle: {
+    en: "Conference Google Developer Days",
+    pl: "Konferencja Google Developer Days",
   },
   workshops_google_dev_days_text: {
-    en: "Participation in workshops on PWA, Firebase, and Google Maps tooling.",
-    pl: "Udział w warsztatach dotyczących PWA, Firebase i narzędzi Google Maps.",
+    en: "Participation in workshops on PWA, Firebase, and Google Maps tooling",
+    pl: "Udział w warsztatach: PWA, Firebase i narzędzi Google Maps",
   },
   workshops_coders_lab_title: {
     en: "Coders Lab – Bootcamp",
     pl: "Coders Lab – Bootcamp",
   },
+  workshops_coders_lab_subtitle: {
+    en: "Coders Lab – Bootcamp",
+    pl: "Coders Lab – Bootcamp",
+  },
   workshops_coders_lab_text: {
-    en: "Intensive Front-End Developer Training (240h).",
-    pl: "Intensywny kurs na Front-End Developera (240h).",
+    en: "Intensive Front-End Developer Training (240h)",
+    pl: "Intensywny kurs na Front-End Developera (240h)",
   },
   workshops_open_university_title: {
     en: "Open University of Warsaw – MS Excel & VBA Course",
@@ -402,6 +426,10 @@ const translations: Translations = {
   date_ongoing: {
     en: "Ongoing",
     pl: "Obecnie",
+  },
+  date_present: {
+    en: "Present",
+    pl: "obecnie",
   },
   skills_title: {
     en: "skills",
