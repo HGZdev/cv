@@ -23,8 +23,8 @@ const translations: Translations = {
   },
 
   consent_text: {
-    en: "I hereby consent to the processing of my vital and personal data in so far as this is required under the recruitment campaign, in accordance with applicable data protection laws.",
-    pl: "Wyrażam zgodę na przetwarzanie moich danych osobowych w celu prowadzenia rekrutacji na aplikowane przeze mnie stanowisko.",
+    en: "I hereby give consent for my personal data included in my application to be processed for the purposes of the recruitment process under the European Parliament’s and Council of the European Union Regulation on the Protection of Natural Persons as of 27 April 2016, with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC.",
+    pl: "Niniejszym wyrażam zgodę na przetwarzanie moich danych osobowych zawartych w mojej aplikacji na potrzeby procesu rekrutacyjnego zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady Unii Europejskiej z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylającym dyrektywę 95/46/WE.",
   },
   about_github_link_text: {
     en: "GitHub portfolio",
