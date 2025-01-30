@@ -25,6 +25,24 @@ import {I18nLang, useLang} from "../../../../lib/i18n";
 
 const {VITE_BASE_URL} = getConfig();
 
+export const getDateRangeString = ({
+  startDate,
+  endDate,
+  getText,
+  lang: forceLang,
+}: {
+  startDate: string;
+  endDate?: string;
+  getText: Function;
+  lang?: string;
+}) => {
+  return `${startDate} ${
+    endDate
+      ? endDate !== startDate && ` – ${endDate}`
+      : ` – ${getText("date_ongoing", forceLang)}`
+  }`;
+};
+
 const LeftHeadline = ({
   headlineKey,
   lang,
@@ -108,7 +126,7 @@ const LeftTextSection = ({
                 <span className="font-normal text-[10px]">
                   {titleKey ? `${getText(titleKey, lang)}: ` : ""}
                 </span>
-                {linkType ? (
+                {linkType !== undefined ? (
                   <a href={`${linkType}${desc}`}>
                     {descKey ? getText(descKey, lang) : desc}
                   </a>
@@ -267,17 +285,14 @@ const RightSection = ({
               <div className="flex gap-2" key={titleKey}>
                 <div className="flex w-12 pl-1 pt-1">
                   <span className="font-mono font-light text-[8px] text-primaryResume">
-                    {startDate}
-                    {endDate
-                      ? endDate !== startDate && ` – ${endDate}`
-                      : ` – ${getText("date_ongoing", lang)}`}
+                    {getDateRangeString({startDate, endDate, getText, lang})}
                   </span>
                 </div>
                 <div className="flex flex-col flex-1">
-                  <span className="text-primaryResume text-[14px] font-semibold leading-tight">
+                  <span className="text-primaryResume text-[12px] font-normal leading-tight">
                     {getText(titleKey!, lang)}
                   </span>
-                  <span className="text-primaryResume text-[12px] font-normal">
+                  <span className="text-primaryResume text-[14px] font-semibold">
                     {subtitleKey && getText(subtitleKey!, lang)}
                   </span>
                   {textKey && (

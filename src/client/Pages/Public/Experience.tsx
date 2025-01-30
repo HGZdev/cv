@@ -2,6 +2,7 @@ import AnimatedContainer from "../../AppComponents/AnimatedContainer";
 import ContentHeader from "../../AppComponents/ContentHeader";
 import {jobBlock} from "../../contentDb";
 import {useLang} from "../../../../lib/i18n";
+import {getDateRangeString} from "./Resume";
 
 export const Block = ({
   titleKey,
@@ -13,7 +14,7 @@ export const Block = ({
 }: {
   titleKey?: string;
   subtitleKey?: string;
-  startDate?: string;
+  startDate: string;
   endDate?: string;
   textKey?: string;
   listKeys?: string[];
@@ -23,10 +24,7 @@ export const Block = ({
   return (
     <div className="flex flex-col">
       <span className="text-title-small text-onSecondary">
-        {startDate}
-        {endDate
-          ? endDate !== startDate && ` – ${endDate}`
-          : ` – ${getText("date_ongoing")}`}
+        {getDateRangeString({startDate, endDate, getText})}
       </span>
       <span className="text-title-large-mobile md:text-title-large text-onPrimary">
         {titleKey ? getText(titleKey) : ""}
