@@ -1,6 +1,6 @@
 import React, {createContext, useState, useContext} from "react";
 
-export type I18nLang = string;
+export type I18nLang = "en" | "pl";
 export type I18nKey = string;
 export type I18nLangText = string;
 
@@ -25,8 +25,8 @@ const I18nContext = createContext<LangContextType | undefined>(undefined);
 
 export interface I18nProviderProps {
   translations: Translations;
-  langs: string[];
-  defaultLang: string;
+  langs: I18nLang[];
+  defaultLang: I18nLang;
   children: React.ReactNode;
 }
 

@@ -81,7 +81,7 @@ export const createRoutes = (langs: I18nLang[], defaultLang: I18nLang) => {
 };
 
 const Root: React.FC = () => {
-  const availableLangs = ["en", "pl"];
+  const availableLangs: I18nLang[] = ["en", "pl"];
   const defaultLang = "en";
 
   const currentLang =
