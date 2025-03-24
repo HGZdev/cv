@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {twMerge} from "tailwind-merge";
-import {useLang} from "../../../lib/i18n";
+import {I18nLang, useLang} from "../../../lib/i18n";
 import {useNavigate} from "react-router-dom";
 import getConfig from "../Components/getConfig";
 
@@ -11,7 +11,7 @@ const LangSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
-  const handleLangChange = (newLang: string) => {
+  const handleLangChange = (newLang: I18nLang) => {
     let newPath;
 
     // Update the URL with the new language, preserving the current path

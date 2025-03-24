@@ -105,7 +105,13 @@ export default {
             fontWeight: 300,
           },
         ],
-        "body-small": ["14px", "16px"],
+        "body-small": [
+          "10px",
+          {
+            lineHeight: "12px",
+            fontWeight: 300,
+          },
+        ],
 
         // Label styles
         "label-large": ["24px", "auto"],
