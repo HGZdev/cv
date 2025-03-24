@@ -1,5 +1,5 @@
 import {decodeString} from "./AppComponents/helpers";
-import {BiLogoRedux, BiLogoTypescript} from "react-icons/bi";
+import {BiLogoJavascript, BiLogoRedux, BiLogoTypescript} from "react-icons/bi";
 import {type IconType} from "react-icons";
 import {DiCss3Full, DiHtml5} from "react-icons/di";
 import {FaGithub, FaGitSquare, FaNode, FaSass} from "react-icons/fa";
@@ -9,8 +9,8 @@ import {
   SiCoreldraw,
   SiCypress,
   SiFirebase,
-  SiGithubactions,
   SiJest,
+  SiMaterialdesign,
   SiQwik,
   SiSqlite,
   SiStyledcomponents,
@@ -19,7 +19,6 @@ import {
   SiVitest,
   SiWebpack,
 } from "react-icons/si";
-import {VscGithubProject} from "react-icons/vsc";
 import {RiNextjsFill, RiTailwindCssLine} from "react-icons/ri";
 import {FiFigma} from "react-icons/fi";
 import {TbSql} from "react-icons/tb";
@@ -31,7 +30,8 @@ export interface BlockProps {
   descKey?: TranslationKey;
   endDate?: string;
   hidden?: boolean;
-  Icon?: IconType;
+  Icon?: IconType | typeof FlagIcon;
+  iconProps?: object;
   linkType?: string;
   list?: string[];
   listKeys?: TranslationKey[];
@@ -43,6 +43,7 @@ export interface BlockProps {
   textKey?: TranslationKey;
   title?: string;
   titleKey?: TranslationKey;
+  location?: string;
 }
 
 export interface SectionProps {
@@ -62,7 +63,7 @@ export const linkedIn =
   "https://www.linkedin.com/in/hanna-gaudasinska-zapasnik";
 export const github = "https://github.com/HGZdev";
 
-export const fileName = "Hanna_Gaudasinska_Zapasnik_CV_ENG+PL.pdf";
+export const fileName = "Hanna_Gaudasinska_Zapasnik_CV_ENG.pdf";
 export const pdfPath = `/docs/${fileName}`;
 
 export const aboutTextKeys: TranslationKey[] = [
@@ -86,7 +87,7 @@ export const personalSection: SectionProps = {
       list: [
         {
           titleKey: "personal_location_title",
-          descKey: "personal_location_desc",
+          descKey: "location_warsaw",
         },
         {titleKey: "personal_phone_title", desc: phone, linkType: "tel:"},
         {titleKey: "personal_email_title", desc: email, linkType: "mailto:"},
@@ -112,17 +113,25 @@ export const hobbiesSection: SectionProps = {
   ],
 };
 
+const FlagIcon = ({flag}: {flag: string}) => (
+  <span className="leading-none">{flag}</span>
+);
+
 export const langSection: SectionProps = {
   headlineKey: "languages_headline",
   blocks: [
     {
       list: [
         {
+          Icon: FlagIcon,
+          iconProps: {flag: "🇵🇱"},
           titleKey: "languages_polish_title",
           stars: 5,
           descKey: "languages_native_desc",
         },
         {
+          Icon: FlagIcon,
+          iconProps: {flag: "🇬🇧"},
           titleKey: "languages_english_title",
           stars: 4,
           descKey: "languages_advanced_desc",
@@ -137,14 +146,19 @@ export const techSection: SectionProps = {
   blocks: [
     {
       list: [
+        {Icon: GrReactjs, titleKey: "technologies_react_title", stars: 4},
+        {
+          Icon: BiLogoJavascript,
+          titleKey: "technologies_javascript_title",
+          stars: 4,
+        },
         {
           Icon: BiLogoTypescript,
           titleKey: "technologies_typescript_title",
           stars: 3,
         },
-        {Icon: GrReactjs, titleKey: "technologies_react_title", stars: 4},
-        {Icon: RiNextjsFill, titleKey: "technologies_nextjs_title", stars: 1},
         {Icon: SiWebpack, titleKey: "technologies_webpack_title", stars: 3},
+        {Icon: RiNextjsFill, titleKey: "technologies_nextjs_title", stars: 2},
         {Icon: SiVite, titleKey: "technologies_vite_title", stars: 2},
         {
           Icon: SiQwik,
@@ -174,6 +188,12 @@ export const techSection: SectionProps = {
           stars: 3,
         },
         {
+          Icon: SiMaterialdesign,
+          titleKey: "technologies_material_ui",
+          stars: 2,
+          // hidden: true,
+        },
+        {
           Icon: SiStyledcomponents,
           titleKey: "technologies_styled_components_short_title",
           stars: 4,
@@ -189,8 +209,8 @@ export const techSection: SectionProps = {
     {
       list: [
         {Icon: FaNode, titleKey: "technologies_nodejs_title", stars: 3},
-        {Icon: GrGraphQl, titleKey: "technologies_graphql_title", stars: 4},
         {Icon: TbSql, titleKey: "technologies_sql_title", stars: 3},
+        {Icon: GrGraphQl, titleKey: "technologies_graphql_title", stars: 4},
         {Icon: SiSqlite, titleKey: "technologies_sqlite_title", stars: 3},
         {
           Icon: SiFirebase,
@@ -209,13 +229,13 @@ export const techSection: SectionProps = {
     {
       list: [
         {Icon: SiJest, titleKey: "technologies_jest_title", stars: 4},
+        {Icon: SiCypress, titleKey: "technologies_cypress_title", stars: 2},
         {Icon: SiVitest, titleKey: "technologies_vitest_title", stars: 4},
         {
           Icon: SiTestinglibrary,
           titleKey: "technologies_testing_library_title",
           stars: 3,
         },
-        {Icon: SiCypress, titleKey: "technologies_cypress_title", stars: 2},
       ],
     },
   ],
@@ -228,32 +248,31 @@ export const toolsSection: SectionProps = {
       list: [
         {Icon: FaGitSquare, titleKey: "tools_git_title", stars: 3},
         {Icon: FaGitAlt, titleKey: "tools_gitup_title", stars: 4, hidden: true},
+        // {
+        //   Icon: SiGithubactions,
+        //   titleKey: "tools_github_actions_title",
+        //   stars: 2,
+        // },
+        {Icon: FiFigma, titleKey: "tools_figma_title", stars: 3},
         {
           Icon: FaGithub,
           titleKey: "tools_github_title",
           stars: 4,
         },
-        {
-          Icon: SiGithubactions,
-          titleKey: "tools_github_actions_title",
-          stars: 2,
-        },
-        {
-          Icon: VscGithubProject,
-          titleKey: "tools_github_projects_title",
-          stars: 4,
-        },
-        {Icon: FiFigma, titleKey: "tools_figma_title", stars: 3},
-        {
-          Icon: SiAffinity,
-          titleKey: "tools_affinity_photo_title",
-          stars: 3,
-          hidden: true,
-        },
+        // {
+        //   Icon: VscGithubProject,
+        //   titleKey: "tools_github_projects_title",
+        //   stars: 4,
+        // },
         {
           Icon: SiCoreldraw,
           titleKey: "tools_corel_photo_title",
           stars: 2,
+        },
+        {
+          Icon: SiAffinity,
+          titleKey: "tools_affinity_photo_title",
+          stars: 3,
           hidden: true,
         },
       ],
@@ -265,7 +284,7 @@ export const jobBlock: BlockProps[] = [
   {
     titleKey: "jobs_stratokit_title",
     subtitleKey: "jobs_stratokit_subtitle",
-    startDate: "04.2021",
+    startDate: "2021-04",
     listKeys: [
       "jobs_stratokit_responsibility_1",
       "jobs_stratokit_responsibility_2",
@@ -274,43 +293,49 @@ export const jobBlock: BlockProps[] = [
       "jobs_stratokit_responsibility_5",
       "jobs_stratokit_responsibility_6",
     ],
+    location: "location_warsaw",
   },
   {
     titleKey: "jobs_yaska_title",
     subtitleKey: "jobs_yaska_subtitle",
-    startDate: "10.2017",
-    endDate: "04.2021",
+    startDate: "2017-10",
+    endDate: "2021-04",
     listKeys: [
       "jobs_yaska_responsibility_1",
       "jobs_yaska_responsibility_2",
       "jobs_yaska_responsibility_3",
     ],
+    location: "location_warsaw",
   },
   {
     titleKey: "jobs_voicemap_title",
-    textKey: "jobs_voicemap_text",
-    startDate: "12.2016",
+    subtitleKey: "jobs_voicemap_subtitle",
+    listKeys: ["jobs_voicemap_text"],
+    startDate: "2016-12",
   },
   {
     titleKey: "jobs_tns_title",
     subtitleKey: "jobs_tns_subtitle",
-    startDate: "05.2013",
-    endDate: "05.2015",
-    textKey: "jobs_tns_responsibility_1",
+    startDate: "2013-05",
+    endDate: "2015-05",
+    listKeys: ["jobs_tns_responsibility_1"],
+    location: "location_warsaw",
   },
   {
     titleKey: "jobs_acnielsen_title",
     subtitleKey: "jobs_acnielsen_subtitle",
-    startDate: "09.2012",
-    endDate: "03.2013",
-    textKey: "jobs_acnielsen_responsibility_1",
+    startDate: "2012-09",
+    endDate: "2013-03",
+    listKeys: ["jobs_acnielsen_responsibility_1"],
+    location: "location_warsaw",
   },
   {
     titleKey: "jobs_loreal_title",
     subtitleKey: "jobs_loreal_subtitle",
-    startDate: "06.2010",
-    endDate: "12.2010",
-    textKey: "jobs_loreal_responsibility_1",
+    startDate: "2010-06",
+    endDate: "2010-12",
+    listKeys: ["jobs_loreal_responsibility_1"],
+    location: "location_warsaw",
   },
 ];
 
@@ -318,40 +343,42 @@ export const educationBlocks: BlockProps[] = [
   {
     titleKey: "education_warsaw_economics_title",
     subtitleKey: "education_warsaw_economics_subtitle",
-    startDate: "09.2005",
-    endDate: "07.2012",
+    startDate: "2005-09",
+    endDate: "2012-07",
   },
   {
     titleKey: "education_warsaw_sociology_title",
     subtitleKey: "education_warsaw_sociology_subtitle",
-    startDate: "09.2007",
-    endDate: "06.2012",
+    startDate: "2007-09",
+    endDate: "2012-06",
   },
   {
     titleKey: "education_maastricht_title",
     subtitleKey: "education_maastricht_subtitle",
-    startDate: "01.2010",
-    endDate: "06.2010",
+    startDate: "2010-01",
+    endDate: "2010-06",
   },
 ];
 
 export const workshopBlocks: BlockProps[] = [
   {
-    titleKey: "workshops_google_dev_days_title",
-    textKey: "workshops_google_dev_days_text",
-    startDate: "09.2017",
-    endDate: "09.2017",
+    subtitleKey: "workshops_google_dev_days_subtitle",
+    listKeys: ["workshops_google_dev_days_text"],
+    startDate: "2017-09",
+    endDate: "2017-09",
+    location: "location_krakow",
   },
   {
-    titleKey: "workshops_coders_lab_title",
-    textKey: "workshops_coders_lab_text",
-    startDate: "04.2017",
-    endDate: "06.2017",
+    subtitleKey: "workshops_coders_lab_subtitle",
+    listKeys: ["workshops_coders_lab_text"],
+    startDate: "2017-04",
+    endDate: "2017-06",
+    location: "location_warsaw",
   },
-  {
-    titleKey: "workshops_open_university_title",
-    textKey: "workshops_open_university_text",
-    startDate: "04.2017",
-    endDate: "06.2017",
-  },
+  // {
+  //   titleKey: "workshops_open_university_title",
+  //   listKeys:[ "workshops_open_university_text"],
+  //   startDate: "2017-04",
+  //   endDate: "2017-06",
+  // },
 ];
