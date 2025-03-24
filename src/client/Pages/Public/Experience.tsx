@@ -14,7 +14,7 @@ export const Block = ({
 }: {
   titleKey?: string;
   subtitleKey?: string;
-  startDate: string;
+  startDate?: string;
   endDate?: string;
   textKey?: string;
   listKeys?: string[];
@@ -24,7 +24,7 @@ export const Block = ({
   return (
     <div className="flex flex-col">
       <span className="text-title-small text-onSecondary">
-        {getDateRangeString({startDate, endDate, getText})}
+        {startDate && getDateRangeString({startDate, endDate, getText})}
       </span>
       <span className="text-title-large-mobile md:text-title-large text-onPrimary">
         {titleKey ? getText(titleKey) : ""}
@@ -67,7 +67,7 @@ const Experience = () => {
         }}
       />
       <div className="flex flex-col gap-6">
-        {jobBlock?.map((props, i) => (
+        {jobBlock.map((props, i) => (
           <Block key={i} {...props} />
         ))}
       </div>

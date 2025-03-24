@@ -113,9 +113,8 @@ export const hobbiesSection: SectionProps = {
   ],
 };
 
-const FlagIcon = ({flag}: {flag: string}) => (
-  <span className="leading-none">{flag}</span>
-);
+const FlagIcon = ({flag}: {flag?: string}) =>
+  flag && <span className="leading-none">{flag}</span>;
 
 export const langSection: SectionProps = {
   headlineKey: "languages_headline",

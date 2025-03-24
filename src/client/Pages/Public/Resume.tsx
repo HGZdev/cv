@@ -1,7 +1,7 @@
 import BgContainer from "../../Components/BgContainer";
 import getConfig from "../../Components/getConfig";
 import {useTrackPageViewsInGA} from "../../../../lib/GoogleAnalytics";
-import {useRef} from "react";
+import {ReactNode, useRef} from "react";
 import {useReactToPrint} from "react-to-print";
 import {PiPrinter} from "react-icons/pi";
 import {
@@ -83,7 +83,7 @@ const IconAndLabel = ({
   );
 };
 
-const Rating = ({stars = 0}) => (
+export const Rating = ({stars = 0}) => (
   <div className="flex gap-1">
     {Array.from({length: stars}, (_, i) => (
       <MdOutlineStar
@@ -116,7 +116,7 @@ const LeftSkillsSection = ({
             <div key={i} className="grid grid-cols-2 gap-1 gap-x-2">
               {b.list
                 .filter((l) => !l.hidden)
-                .map(({titleKey, stars = 0, Icon, iconProps}, j) => (
+                .map(({titleKey, Icon, iconProps}, j) => (
                   <div key={j}>
                     {/* ICON AND LABEL */}
                     <IconAndLabel
@@ -239,7 +239,7 @@ const AboutSection = ({lang}: {lang: I18nLang}) => {
   );
 };
 
-const Li = ({children}) => (
+const Li = ({children}: {children: ReactNode}) => (
   <li className="flex py-[0.1rem] gap-[3px] text-body-small ">
     <GiCheckMark className="text-[#7085c9]" />
     <span className="font-normal">{children}</span>
