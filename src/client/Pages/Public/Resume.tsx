@@ -1,9 +1,9 @@
 import BgContainer from "../../Components/BgContainer";
 import getConfig from "../../Components/getConfig";
-import {useTrackPageViewsInGA} from "../../../../lib/GoogleAnalytics";
-import {ReactNode, useRef} from "react";
-import {useReactToPrint} from "react-to-print";
-import {PiPrinter} from "react-icons/pi";
+import { useTrackPageViewsInGA } from "../../../../lib/GoogleAnalytics";
+import { ReactNode, useRef } from "react";
+import { useReactToPrint } from "react-to-print";
+import { PiPrinter } from "react-icons/pi";
 import {
   BlockProps,
   educationBlocks,
@@ -19,12 +19,12 @@ import {
   toolsSection,
   workshopBlocks,
 } from "../../contentDb";
-import {MdOutlineStar, MdOutlineStarBorder} from "react-icons/md";
-import {I18nLang, useLang} from "../../../../lib/i18n";
-import {formatDate} from "../../AppComponents/helpers";
-import {GiCheckMark} from "react-icons/gi";
+import { MdOutlineStar, MdOutlineStarBorder } from "react-icons/md";
+import { I18nLang, useLang } from "../../../../lib/i18n";
+import { formatDate } from "../../AppComponents/helpers";
+import { GiCheckMark } from "react-icons/gi";
 
-const {VITE_BASE_URL} = getConfig();
+const { VITE_BASE_URL } = getConfig();
 
 export const getDateRangeString = ({
   startDate,
@@ -53,7 +53,7 @@ const LeftHeadline = ({
   headlineKey: string;
   lang: I18nLang;
 }) => {
-  const {getText} = useLang();
+  const { getText } = useLang();
   return (
     <h2 className="bg-onSecondaryResume text-[12px] font-extralight leading-tight px-3 py-2">
       {getText(headlineKey, lang)}
@@ -72,7 +72,7 @@ const IconAndLabel = ({
   lang: I18nLang;
   iconProps?: any;
 }) => {
-  const {getText} = useLang();
+  const { getText } = useLang();
   return (
     <div className="flex gap-2">
       <Icon size={14} {...iconProps} />
@@ -83,16 +83,16 @@ const IconAndLabel = ({
   );
 };
 
-export const Rating = ({stars = 0}) => (
+export const Rating = ({ stars = 0 }) => (
   <div className="flex gap-1">
-    {Array.from({length: stars}, (_, i) => (
+    {Array.from({ length: stars }, (_, i) => (
       <MdOutlineStar
         key={`star-${i}`}
         size={12}
         className="text-onPrimaryResume"
       />
     ))}
-    {Array.from({length: 5 - stars}, (_, i) => (
+    {Array.from({ length: 5 - stars }, (_, i) => (
       <MdOutlineStarBorder
         key={`empty-star-${i}`}
         size={12}
@@ -106,7 +106,7 @@ const LeftSkillsSection = ({
   headlineKey,
   blocks,
   lang,
-}: SectionProps & {lang: I18nLang}) => {
+}: SectionProps & { lang: I18nLang }) => {
   return (
     <div>
       <LeftHeadline headlineKey={headlineKey} lang={lang} />
@@ -115,8 +115,8 @@ const LeftSkillsSection = ({
           <>
             <div key={i} className="grid grid-cols-2 gap-1 gap-x-2">
               {b.list
-                .filter((l) => !l.hidden)
-                .map(({titleKey, Icon, iconProps}, j) => (
+                .filter((l) => !l.hiddenInResume)
+                .map(({ titleKey, Icon, iconProps }, j) => (
                   <div key={j}>
                     {/* ICON AND LABEL */}
                     <IconAndLabel
@@ -142,16 +142,16 @@ const LeftTextSection = ({
   headlineKey,
   blocks,
   lang,
-}: SectionProps & {lang: I18nLang}) => {
-  const {getText} = useLang();
+}: SectionProps & { lang: I18nLang }) => {
+  const { getText } = useLang();
   return (
     <div>
       <LeftHeadline headlineKey={headlineKey} lang={lang} />
       <div className="flex flex-col px-3 py-3 gap-2">
         {blocks.map((b) =>
           b.list
-            .filter((l) => !l.hidden)
-            .map(({titleKey, descKey, desc, linkType}, j) => (
+            .filter((l) => !l.hiddenInResume)
+            .map(({ titleKey, descKey, desc, linkType }, j) => (
               <span
                 className="text-[10px] font-extralight leading-tight"
                 key={j}
@@ -174,7 +174,7 @@ const LeftTextSection = ({
   );
 };
 
-const LeftBar = ({lang}: {lang: I18nLang}) => {
+const LeftBar = ({ lang }: { lang: I18nLang }) => {
   const imagePath = `${VITE_BASE_URL}/images/portrait2.webp`;
   return (
     <div className="bg-primaryResume text-onPrimary flex flex-col w-2/5 gap-3 py-3">
@@ -189,7 +189,7 @@ const LeftBar = ({lang}: {lang: I18nLang}) => {
         {/* IMAGE */}
         <div
           className="bg-no-repeat bg-[calc(50%+10px)_calc(50%-10px)] bg-[length:130%] mx-3"
-          style={{backgroundImage: `url('${imagePath}')`}}
+          style={{ backgroundImage: `url('${imagePath}')` }}
         >
           <div className="w-full h-[15rem]"></div>
         </div>
@@ -218,7 +218,7 @@ const RightHeadline = ({
   headlineKey: string;
   lang: I18nLang;
 }) => {
-  const {getText} = useLang();
+  const { getText } = useLang();
   return (
     <div className="py-1 my-2 border-t-transparent border-b-onSecondaryResume/30 border-b-[1px] border-solid">
       <h2 className=" text-[14px] font-light leading-tight ml-1">
@@ -228,8 +228,8 @@ const RightHeadline = ({
   );
 };
 
-const AboutSection = ({lang}: {lang: I18nLang}) => {
-  const {getText} = useLang();
+const AboutSection = ({ lang }: { lang: I18nLang }) => {
+  const { getText } = useLang();
   return (
     <div className="bg-[#e8edff] text-[10px] italic font-light leading-normal flex flex-col gap-1 p-2">
       <p>{getText("about_text_paragraph_1", lang)}</p>
@@ -239,7 +239,7 @@ const AboutSection = ({lang}: {lang: I18nLang}) => {
   );
 };
 
-const Li = ({children}: {children: ReactNode}) => (
+const Li = ({ children }: { children: ReactNode }) => (
   <li className="flex py-[0.1rem] gap-[3px] text-body-small ">
     <GiCheckMark className="text-[#7085c9]" />
     <span className="font-normal">{children}</span>
@@ -248,28 +248,29 @@ const Li = ({children}: {children: ReactNode}) => (
 
 const keySkillsI18nMap = [
   [
-    {en: "Frontend Focus", pl: "Specjalizacja frontendowa"},
-    {en: "JavaScript / TypeScript", pl: "JavaScript / TypeScript"},
-    {en: "React.js", pl: "React.js"},
-    {en: "HTML / CSS", pl: "HTML / CSS"},
+    { en: "Frontend Focus", pl: "Specjalizacja frontendowa" },
+    { en: "JavaScript / TypeScript", pl: "JavaScript / TypeScript" },
+    { en: "React.js", pl: "React.js" },
+    { en: "HTML / CSS", pl: "HTML / CSS" },
     {
       en: "Test-driven development",
       pl: "Test-driven development",
     },
-    {en: "Webpack / Vite", pl: "Webpack / Vite"},
+    { en: "Webpack / Vite", pl: "Webpack / Vite" },
   ],
   [
     {
       en: "Backend Experience",
       pl: "Doświadczenie w technologiach serwerowych",
     },
-    {en: "Node.js", pl: "Node.js"},
-    {en: "SQL / SQLite", pl: "SQL / SQLite"},
+    { en: "Node.js", pl: "Node.js" },
+    { en: "SQL / SQLite / PostgreSQL", pl: "SQL / SQLite / PostgreSQL" },
     {
       en: "API Integration: REST / GraphQL",
       pl: "Integracja API: REST / GraphQL",
     },
-    {en: "Git / Github", pl: "Git / Github"},
+    { en: "Git / Github", pl: "Git / Github" },
+    { en: "CI/CD", pl: "CI/CD" },
   ],
   [
     {
@@ -277,26 +278,26 @@ const keySkillsI18nMap = [
       pl: "Szybka adaptacja i nauka",
     },
     {
-      en: "Project Management Skills",
-      pl: "Umiejętność zarządzania projektami",
+      en: "Excellent Interpersonal Communication",
+      pl: "Bardzo dobra komunikacja interpersonalna",
     },
     {
-      en: "Interpersonal Communication",
-      pl: "Skuteczna komunikacja interpersonalna",
+      en: "Agile Methodologies Knowledge",
+      pl: "Znajomość metod Agile",
     },
-    {en: "Client Liaison", pl: "Współpraca z klientem biznesowym"},
-    {en: `Pixel-perfect Approach`, pl: `Dbałość o detale (Pixel-perfect)`},
+    { en: "Client Liaison", pl: "Współpraca z klientem biznesowym" },
+    { en: `Pixel-perfect Approach`, pl: `Dbałość o detale (Pixel-perfect)` },
   ],
 ];
 
-const KeySkillsSection = ({lang}: {lang: I18nLang}) => {
+const KeySkillsSection = ({ lang }: { lang: I18nLang }) => {
   return (
     <div>
       <RightHeadline headlineKey="key_skills_headline" lang={lang} />
       <div className="flex px-2">
         {keySkillsI18nMap.map((list, i) => (
           <ul key={i} className="w-full">
-            {list.map(({en, pl}) => (
+            {list.map(({ en, pl }) => (
               <Li key={en}>{lang === "en" ? en : pl}</Li>
             ))}
           </ul>
@@ -315,13 +316,13 @@ const RightSection = ({
   blocks: BlockProps[];
   lang: I18nLang;
 }) => {
-  const {getText} = useLang();
+  const { getText } = useLang();
   return (
     <div className="flex flex-col ">
       <RightHeadline headlineKey={headlineKey} lang={lang} />
       <div className="flex flex-col gap-2 ml-1">
         {blocks
-          .filter((b) => !b.hidden)
+          .filter((b) => !b.hiddenInResume)
           .map(
             ({
               titleKey,
@@ -346,7 +347,12 @@ const RightSection = ({
                   {/* TITLE */}
                   <span className="text-[10px] font-normal leading-tight">
                     <span className="text-[#7085c9]">
-                      {getDateRangeString({startDate, endDate, getText, lang})}
+                      {getDateRangeString({
+                        startDate,
+                        endDate,
+                        getText,
+                        lang,
+                      })}
                     </span>
                     {" | "}
                     {[
@@ -382,8 +388,8 @@ const RightSection = ({
   );
 };
 
-const ConsentSection = ({lang}: {lang: I18nLang}) => {
-  const {getText} = useLang();
+const ConsentSection = ({ lang }: { lang: I18nLang }) => {
+  const { getText } = useLang();
   return (
     <div className="flex">
       <span className="text-[8px] italic font-normal leading-none text-gray-400 pt-1">
@@ -393,7 +399,7 @@ const ConsentSection = ({lang}: {lang: I18nLang}) => {
   );
 };
 
-const RightBar = ({lang}: {lang: I18nLang}) => (
+const RightBar = ({ lang }: { lang: I18nLang }) => (
   <div className="flex flex-col justify-between">
     <div className="flex flex-col">
       <AboutSection lang={lang} />
@@ -418,7 +424,7 @@ const RightBar = ({lang}: {lang: I18nLang}) => (
   </div>
 );
 
-const CVPanel = ({lang}: {lang: I18nLang}) => (
+const CVPanel = ({ lang }: { lang: I18nLang }) => (
   <div className="flex bg-white h-[293mm] w-[210mm] p-4 gap-3">
     <LeftBar lang={lang} />
     <RightBar lang={lang} />

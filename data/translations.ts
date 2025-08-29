@@ -1,4 +1,4 @@
-import type {Translations} from "../lib/i18n";
+import type { Translations } from "../lib/i18n";
 
 const translations: Translations = {
   about_title: {
@@ -6,12 +6,12 @@ const translations: Translations = {
     pl: "o mnie",
   },
   about_text_paragraph_1: {
-    en: 'I am a software developer with seven years of experience specializing in complex web development, with expertise spanning frontend and "soft" backend technologies.',
-    pl: "Jestem programistką z siedmioletnim doświadczeniem w tworzeniu aplikacji webowych. Specjalizuję się w technologiach frontend, ale bliskie są mi również zagadnienia backendowe.",
+    en: "I am a software developer with seven years of experience specializing in complex web development, with expertise spanning frontend as well as 'soft' backend technologies.",
+    pl: "Jestem programistką z siedmioletnim doświadczeniem w tworzeniu aplikacji webowych. Specjalizuję się w technologiach frontendowych, ale również w zagadnieniach backendowe",
   },
   about_text_paragraph_2: {
-    en: "Over the course of my career, I have had the opportunity to work on a variety of projects, including a holiday rental service, an informational platform, and a SaaS platform. These experiences allowed me to apply my skills across diverse and challenging domains. My responsibilities have included developing user interfaces, managing client-server communication, testing, and occasionally leading projects. My experience in market research enhanced my ability to work with business clients and translate their needs into functional requirements.",
-    pl: "W toku mojej kariery zawodowej miałam okazję pracować nad różnorodnymi projektami, w tym serwisem wynajmu wakacyjnego, portalem informacyjnym oraz platformą SaaS. Posiadam doświadczenie w tworzeniu i testowaniu interfejsów użytkownika, zarządzaniu komunikacją klient-serwer, a także, okazjonalnie, zarządzałam projektami. Wcześniejsza praca w branży badań rynkowych pozwoliła mi rozwinąć umiejętność współpracy z klientami biznesowymi i skutecznego przekładania ich potrzeb na funkcjonalności.",
+    en: "Over the course of my career, I've worked on diverse projects including a holiday rental service, news portal, financial data management platform, and SaaS application. My responsibilities span UI/UX development, client-server communication, testing, CI/CD and project leadership. My market research background enhances my ability to work with business clients and translate their needs into functional requirements.",
+    pl: "W toku mojej kariery pracowałam nad różnorodnymi projektami, w tym serwisem wynajmu wakacyjnego, portalem informacyjnym, platformą do zarządzania danymi finansowymi oraz aplikacją SaaS. Moje obowiązki obejmowały tworzenie interfejsów użytkownika, zarządzanie komunikacją klient-serwer, testowanie, CI/CD oraz zarządzanie projektami. Doświadczenie w badaniach rynkowych pozwoliło mi rozwinąć umiejętność współpracy z klientami biznesowymi i tłumaczenie ich potrzeb na funkcjonalności.",
   },
   about_text_paragraph_3: {
     en: "I am seeking job opportunities that will allow me to maximize my potential and further develop my skills and knowledge.",
@@ -198,6 +198,10 @@ const translations: Translations = {
     en: "Testing Library",
     pl: "Testing Library",
   },
+  technologies_playwright_title: {
+    en: "Playwright",
+    pl: "Playwright",
+  },
   technologies_cypress_title: {
     en: "Cypress.js",
     pl: "Cypress.js",
@@ -221,6 +225,10 @@ const translations: Translations = {
   tools_gitup_title: {
     en: "GitUp GUI",
     pl: "GitUp GUI",
+  },
+  tools_jira_title: {
+    en: "Jira",
+    pl: "Jira",
   },
   tools_github_title: {
     en: "GitHub",
@@ -249,6 +257,22 @@ const translations: Translations = {
   tools_vscode_title: {
     en: "VS Code",
     pl: "VS Code",
+  },
+  jobs_eqt_title: {
+    en: "EQT Group",
+    pl: "EQT Group",
+  },
+  jobs_eqt_subtitle: {
+    en: "Full-stack Engineer",
+    pl: "Full-stack Engineer",
+  },
+  jobs_eqt_responsibility_1: {
+    en: "Development of internal tools for documents management and financial analysis.",
+    pl: "Rozwój narzędzi wewnętrznych do zarządzania dokumentami i analiz finansowych.",
+  },
+  jobs_eqt_responsibility_2: {
+    en: "References available upon request.",
+    pl: "Referencje dostępne na żądanie.",
   },
   jobs_stratokit_title: {
     en: "StratoKit SA",

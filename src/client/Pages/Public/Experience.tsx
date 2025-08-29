@@ -1,8 +1,8 @@
 import AnimatedContainer from "../../AppComponents/AnimatedContainer";
 import ContentHeader from "../../AppComponents/ContentHeader";
-import {jobBlock} from "../../contentDb";
-import {useLang} from "../../../../lib/i18n";
-import {getDateRangeString} from "./Resume";
+import { jobBlock } from "../../contentDb";
+import { useLang } from "../../../../lib/i18n";
+import { getDateRangeString } from "./Resume";
 
 export const Block = ({
   titleKey,
@@ -19,12 +19,12 @@ export const Block = ({
   textKey?: string;
   listKeys?: string[];
 }) => {
-  const {getText} = useLang();
+  const { getText } = useLang();
 
   return (
     <div className="flex flex-col">
       <span className="text-title-small text-onSecondary">
-        {startDate && getDateRangeString({startDate, endDate, getText})}
+        {startDate && getDateRangeString({ startDate, endDate, getText })}
       </span>
       <span className="text-title-large-mobile md:text-title-large text-onPrimary">
         {titleKey ? getText(titleKey) : ""}
@@ -51,7 +51,7 @@ export const Block = ({
 };
 
 const Experience = () => {
-  const {getText} = useLang();
+  const { getText } = useLang();
 
   return (
     <AnimatedContainer className="p-4 md:p-8 bg-primary">

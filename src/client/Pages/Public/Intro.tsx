@@ -1,8 +1,8 @@
 import AnimatedContainer from "../../AppComponents/AnimatedContainer";
-import {Divider} from "../../AppComponents/Divider";
-import {DiCss3Full, DiHtml5} from "react-icons/di";
-import {FaGithub, FaGitSquare, FaNode, FaSass} from "react-icons/fa";
-import {GrGraphQl, GrReactjs} from "react-icons/gr";
+import { Divider } from "../../AppComponents/Divider";
+import { DiCss3Full, DiHtml5 } from "react-icons/di";
+import { FaGithub, FaGitSquare, FaNode, FaSass } from "react-icons/fa";
+import { GrGraphQl, GrReactjs } from "react-icons/gr";
 import {
   SiAffinity,
   SiCoreldraw,
@@ -18,14 +18,15 @@ import {
   SiVitest,
   SiWebpack,
 } from "react-icons/si";
-import {VscGithubProject, VscVscode} from "react-icons/vsc";
-import {RiJavascriptFill, RiTailwindCssLine} from "react-icons/ri";
-import {FiFigma} from "react-icons/fi";
-import {BiLogoRedux, BiLogoTypescript} from "react-icons/bi";
+import { VscGithubProject, VscVscode } from "react-icons/vsc";
+import { RiJavascriptFill, RiTailwindCssLine } from "react-icons/ri";
+import { FiFigma } from "react-icons/fi";
+import { BiLogoRedux, BiLogoTypescript } from "react-icons/bi";
 import ContentHeader from "../../AppComponents/ContentHeader";
-import {useLang} from "../../../../lib/i18n";
+import { useLang } from "../../../../lib/i18n";
 import LangLink from "../../Components/LangLink";
-import {type IconType} from "react-icons";
+import { type IconType } from "react-icons";
+import { FaMasksTheater } from "react-icons/fa6";
 
 export const IconWithTooltip = ({
   Icon,
@@ -36,7 +37,7 @@ export const IconWithTooltip = ({
   titleKey: string;
   size?: number;
 }) => {
-  const {getText} = useLang();
+  const { getText } = useLang();
   return (
     <div className="relative group flex flex-col items-center gap-1 w-12">
       <Icon
@@ -89,6 +90,10 @@ const IconList = () => (
       Icon={SiTestinglibrary}
       titleKey="technologies_testing_library_title"
     />
+    <IconWithTooltip
+      Icon={FaMasksTheater}
+      titleKey="technologies_playwright_title"
+    />
     <IconWithTooltip Icon={SiCypress} titleKey="technologies_cypress_title" />
     <IconWithTooltip Icon={FaGitSquare} titleKey="tools_git_title" />
     <IconWithTooltip Icon={FaGithub} titleKey="tools_github_title" />
@@ -108,7 +113,7 @@ const IconList = () => (
 );
 
 const Intro = () => {
-  const {getText} = useLang();
+  const { getText } = useLang();
   return (
     <AnimatedContainer className="p-4 md:p-8 bg-primary">
       <ContentHeader
