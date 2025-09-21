@@ -41,7 +41,7 @@ export default ({ mode }) => {
     },
     test: {
       environment: 'jsdom',
-      setupFiles: ['./src/tests/vitestSetup.ts'],
+      setupFiles: ['./src/client/tests/vitestSetup.ts'],
       globals: true,
     },
   });
