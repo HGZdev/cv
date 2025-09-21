@@ -20,12 +20,14 @@ const IconLink = ({
   to = '',
   size = 22,
   className = '',
+  'aria-label': ariaLabel,
 }: {
   Cmp: IconType;
   to: string;
   size?: number;
   className?: string;
   isActive?: boolean;
+  'aria-label'?: string;
 }) => (
   <Link
     to={to}
@@ -34,6 +36,7 @@ const IconLink = ({
       'text-onPrimary hover:text-onSecondary hover:scale-110 transition-transform duration-200',
       className
     )}
+    aria-label={ariaLabel}
   >
     <Cmp size={size} />
   </Link>
@@ -72,20 +75,40 @@ const Hero = () => {
 
       {/* Text */}
       <div className='relative p-2 mb-4'>
-        <h2 className='text-headline-medium-mobile lg:text-headline-medium text-onPrimary'>
+        <h1 className='text-headline-medium-mobile lg:text-headline-medium text-onPrimary'>
           {firstName}
-        </h2>
+        </h1>
         <h2 className='text-headline-medium-mobile lg:text-headline-medium text-onPrimary'>
           {lastName}
         </h2>
         <h3 className='text-headline-small-mobile lg:text-headline-small text-center text-onSecondary'>
           {jobTitle}
         </h3>
-        <div className='flex justify-center gap-4 mt-4'>
-          <IconLink Cmp={MdPhoneIphone} to={`tel:${phone}`} />
-          <IconLink Cmp={MdOutlineEmail} to={`mailto:${email}`} />
-          <IconLink Cmp={FaGithub} to={github} />
-          <IconLink Cmp={FaLinkedinIn} to={linkedIn} />
+        <div
+          className='flex justify-center gap-4 mt-4'
+          role='group'
+          aria-label='Contact information'
+        >
+          <IconLink
+            Cmp={MdPhoneIphone}
+            to={`tel:${phone}`}
+            aria-label={`Call ${phone}`}
+          />
+          <IconLink
+            Cmp={MdOutlineEmail}
+            to={`mailto:${email}`}
+            aria-label={`Send email to ${email}`}
+          />
+          <IconLink
+            Cmp={FaGithub}
+            to={github}
+            aria-label='Visit GitHub profile'
+          />
+          <IconLink
+            Cmp={FaLinkedinIn}
+            to={linkedIn}
+            aria-label='Visit LinkedIn profile'
+          />
         </div>
       </div>
     </HeroBgContainer>

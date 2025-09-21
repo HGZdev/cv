@@ -41,7 +41,7 @@ describe('Personal Component', () => {
 
     // Check for technology icons - they are in one big link with all technologies listed
     const techLink = screen.getByRole('link', {
-      name: /React.js JavaScript TypeScript/i,
+      name: 'View detailed skills information',
     });
 
     expect(techLink).toBeInTheDocument();
@@ -53,7 +53,7 @@ describe('Personal Component', () => {
 
     // The technology icons are in one big link, already tested above
     const techLink = screen.getByRole('link', {
-      name: /React.js JavaScript TypeScript/i,
+      name: 'View detailed skills information',
     });
     expect(techLink).toHaveAttribute('href', '/cv/en/skills');
   });

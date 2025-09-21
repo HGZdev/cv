@@ -68,7 +68,7 @@ describe('CV Application Integration Tests', () => {
 
     // Check for technology icons - they are in one combined link
     const techLink = screen.getByRole('link', {
-      name: /React.js JavaScript TypeScript/i,
+      name: 'View detailed skills information',
     });
 
     expect(techLink).toBeInTheDocument();

@@ -32,17 +32,22 @@ export const Block = ({
   return (
     <div className='flex items-center gap-4 w-42'>
       <div className='flex flex-col items-center text-onPrimary w-16 gap-1'>
-        {Icon && <Icon size={36} />}
+        {Icon && <Icon size={36} aria-hidden='true' />}
         <span className='text-label-small text-onTertiary text-center'>
           {getText(titleKey!)}
         </span>
       </div>
-      <div className='flex gap-1'>
+      <div
+        className='flex gap-1'
+        role='img'
+        aria-label={`${stars} out of 5 stars`}
+      >
         {filledStars.map(i => (
           <MdOutlineStar
             key={`star-${i}`}
             size={22}
             className='text-onSecondary'
+            aria-hidden='true'
           />
         ))}
         {emptyStars.map(i => (
@@ -50,6 +55,7 @@ export const Block = ({
             key={`empty-star-${i}`}
             size={22}
             className='text-onBackground'
+            aria-hidden='true'
           />
         ))}
       </div>
@@ -60,10 +66,10 @@ export const Block = ({
 export const Section = ({ headlineKey, blocks }: SkillSection) => {
   const { getText } = useLang();
   return (
-    <div className='flex flex-col gap-2 py-2'>
-      <span className='text-label-large text-onPrimary'>
+    <section className='flex flex-col gap-2 py-2'>
+      <h2 className='text-label-large text-onPrimary'>
         {getText(headlineKey!)}
-      </span>
+      </h2>
       <div className='flex flex-col gap-2'>
         {blocks?.map((b, i) => (
           <>
@@ -72,7 +78,7 @@ export const Section = ({ headlineKey, blocks }: SkillSection) => {
           </>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

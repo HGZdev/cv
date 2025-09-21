@@ -30,30 +30,40 @@ const LangSwitcher = () => {
 
   return (
     <div className='relative'>
-      <div
+      <button
         className={twMerge(
           'text-[22px] leading-normal font-normal text-onSecondary cursor-pointer',
           'hover:text-onPrimary hover:scale-105 transition-transform duration-200'
         )}
         onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+        aria-haspopup='listbox'
+        aria-label={`Current language: ${lang.toUpperCase()}. Click to change language.`}
       >
         {lang.toUpperCase()}
-      </div>
+      </button>
       {isOpen && (
-        <div className='absolute' onMouseLeave={() => setIsOpen(false)}>
+        <div
+          className='absolute'
+          onMouseLeave={() => setIsOpen(false)}
+          role='listbox'
+          aria-label='Language options'
+        >
           {langs
             .filter(l => l !== lang)
             .map(l => (
-              <div
+              <button
                 key={l}
                 onClick={() => handleLangChange(l)}
                 className={twMerge(
                   'text-[22px] leading-normal font-thin cursor-pointer text-onTertiary',
                   'hover:text-onPrimary hover:scale-105 transition-transform duration-200'
                 )}
+                role='option'
+                aria-label={`Switch to ${l.toUpperCase()}`}
               >
                 {l.toUpperCase()}
-              </div>
+              </button>
             ))}
         </div>
       )}

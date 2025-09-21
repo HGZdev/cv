@@ -18,7 +18,7 @@ const Education = () => {
         }}
       />
       <div className='flex flex-col lg:flex-row gap-16 lg:gap-4'>
-        <div className='flex flex-col gap-4 flex-1'>
+        <section className='flex flex-col gap-4 flex-1'>
           <h2 className='text-headline-small text-onPrimary'>
             {getText('education_education_title')}
           </h2>
@@ -27,8 +27,8 @@ const Education = () => {
               <Block key={i} {...props} />
             ))}
           </div>
-        </div>
-        <div className='flex flex-col gap-4 flex-1'>
+        </section>
+        <section className='flex flex-col gap-4 flex-1'>
           <h2 className='text-headline-small text-onPrimary'>
             {getText('education_workshops_title')}
           </h2>
@@ -37,7 +37,7 @@ const Education = () => {
               <Block key={i} {...props} />
             ))}
           </div>
-        </div>
+        </section>
       </div>
     </AnimatedContainer>
   );

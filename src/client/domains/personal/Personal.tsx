@@ -39,10 +39,15 @@ export const IconWithTooltip = ({
 }) => {
   const { getText } = useLang();
   return (
-    <div className='relative group flex flex-col items-center gap-1 w-12'>
+    <div
+      className='relative group flex flex-col items-center gap-1 w-12'
+      role='img'
+      aria-label={getText(titleKey)}
+    >
       <Icon
         size={size}
         className='group-hover:text-onPrimary hover:scale-110 transition-transform duration-200'
+        aria-hidden='true'
       />
       <span className='text-label-small text-onPrimary text-center whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity'>
         {getText(titleKey)}
@@ -55,6 +60,7 @@ const IconList = () => (
   <LangLink
     to='/skills'
     className='flex flex-wrap gap-1 justify-center text-onTertiary'
+    aria-label='View detailed skills information'
   >
     <IconWithTooltip Icon={GrReactjs} titleKey='technologies_react_title' />
     <IconWithTooltip

@@ -21,20 +21,21 @@ export const Block = ({
   const { getText } = useLang();
 
   return (
-    <div className='flex flex-col'>
-      <span className='text-title-small text-onSecondary'>
+    <article className='flex flex-col'>
+      <time
+        className='text-title-small text-onSecondary'
+        dateTime={`${startDate}/${endDate ?? 'present'}`}
+      >
         {startDate && getDateRangeString({ startDate, endDate, getText })}
-      </span>
-      <span className='text-title-large-mobile md:text-title-large text-onPrimary'>
+      </time>
+      <h3 className='text-title-large-mobile md:text-title-large text-onPrimary'>
         {titleKey ? getText(titleKey) : ''}
-      </span>
-      <span className='text-title-medium text-onPrimary'>
+      </h3>
+      <h4 className='text-title-medium text-onPrimary'>
         {subtitleKey ? getText(subtitleKey) : ''}
-      </span>
+      </h4>
       {textKey && (
-        <span className='text-body-medium text-onTertiary'>
-          {getText(textKey)}
-        </span>
+        <p className='text-body-medium text-onTertiary'>{getText(textKey)}</p>
       )}
       {listKeys && (
         <ul className='ml-4 mt-2'>
@@ -45,7 +46,7 @@ export const Block = ({
           ))}
         </ul>
       )}
-    </div>
+    </article>
   );
 };
 
