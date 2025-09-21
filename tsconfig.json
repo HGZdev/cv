@@ -28,13 +28,12 @@
   },
   "include": [
     "**/*.d.ts",
-    "./src",
+    "./src/client",
     "./data",
     "./lib",
     "./config",
     "build/config.ts",
-    "config/config.ts",
-    "src/client/contentDb.tsx"
+    "config/config.ts"
   ],
   "exclude": ["node_modules"]
 }
