@@ -1,0 +1,2 @@
+# Lint and format code
+npx lint-staged

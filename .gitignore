@@ -30,3 +30,5 @@ build-ssr
 
 config
 models.db
+*storybook.log
+storybook-static
