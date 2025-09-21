@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import { createMemoryRouter, RouterProvider } from 'react-router-dom';
 
 import { I18nLang } from '../../../lib/i18n';
-import { createRoutes } from '../../client/Root';
+import { createRoutes } from '../../app/Root';
 import GlobalStyles from '../../styles/GlobalStyles';
 
 export const renderMockRoot = ({
