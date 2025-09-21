@@ -3,7 +3,7 @@ import { createMemoryRouter, RouterProvider } from 'react-router-dom';
 
 import { I18nLang } from '../../../lib/i18n';
 import { createRoutes } from '../../app/Root';
-import GlobalStyles from '../../styles/GlobalStyles';
+import { GlobalStyles } from '../../styles';
 
 export const renderMockRoot = ({
   langs = ['en', 'pl'],
