@@ -11,6 +11,7 @@ import {
   techSection,
   toolsSection,
 } from '../../contentDb';
+import { useStarRating } from '../../Hooks';
 
 export const skillsSections: SectionProps[] = [
   langSection,
@@ -20,6 +21,8 @@ export const skillsSections: SectionProps[] = [
 
 export const Block = ({ Icon, titleKey, stars = 0 }: BlockProps) => {
   const { getText } = useLang();
+  const { filledStars, emptyStars } = useStarRating(stars);
+
   return (
     <div className='flex items-center gap-4 w-42'>
       <div className='flex flex-col items-center text-onPrimary w-16 gap-1'>
@@ -29,14 +32,14 @@ export const Block = ({ Icon, titleKey, stars = 0 }: BlockProps) => {
         </span>
       </div>
       <div className='flex gap-1'>
-        {Array.from({ length: stars }, (_, i) => (
+        {filledStars.map(i => (
           <MdOutlineStar
             key={`star-${i}`}
             size={22}
             className='text-onSecondary'
           />
         ))}
-        {Array.from({ length: 5 - stars }, (_, i) => (
+        {emptyStars.map(i => (
           <MdOutlineStarBorder
             key={`empty-star-${i}`}
             size={22}
