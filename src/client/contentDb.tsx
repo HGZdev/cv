@@ -13,6 +13,7 @@ import {
   SiCoreldraw,
   SiCypress,
   SiFirebase,
+  SiGithubactions,
   SiJest,
   SiJira,
   SiMaterialdesign,
@@ -59,7 +60,7 @@ export interface SectionProps {
 export const firstName = "Hanna";
 export const lastName = "Gaudasińska-Zapaśnik";
 export const fullName = `${firstName} ${lastName}`;
-export const jobTitle = `JavaScript Developer`;
+export const jobTitle = `Full-stack Developer`;
 
 export const email = decodeString("ih{/efwjAhnbjm/dpn");
 export const phone = decodeString(",59617153:48");
@@ -102,7 +103,6 @@ export const personalSection: SectionProps = {
           titleKey: "personal_linkedin_title",
           desc: linkedIn,
           linkType: "",
-          hiddenInResume: true,
         },
       ],
     },
@@ -262,11 +262,11 @@ export const toolsSection: SectionProps = {
           stars: 4,
           hiddenInResume: true,
         },
-        // {
-        //   Icon: SiGithubactions,
-        //   titleKey: "tools_github_actions_title",
-        //   stars: 2,
-        // },
+        {
+          Icon: SiGithubactions,
+          titleKey: "tools_github_actions_title",
+          stars: 2,
+        },
         { Icon: FiFigma, titleKey: "tools_figma_title", stars: 3 },
         {
           Icon: FaGithub,
@@ -385,13 +385,13 @@ export const educationBlocks: BlockProps[] = [
 ];
 
 export const workshopBlocks: BlockProps[] = [
-  {
-    subtitleKey: "workshops_google_dev_days_subtitle",
-    listKeys: ["workshops_google_dev_days_text"],
-    startDate: "2017-09",
-    endDate: "2017-09",
-    location: "location_krakow",
-  },
+  // {
+  //   subtitleKey: "workshops_google_dev_days_subtitle",
+  //   listKeys: ["workshops_google_dev_days_text"],
+  //   startDate: "2017-09",
+  //   endDate: "2017-09",
+  //   location: "location_krakow",
+  // },
   {
     subtitleKey: "workshops_coders_lab_subtitle",
     listKeys: ["workshops_coders_lab_text"],

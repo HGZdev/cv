@@ -5,17 +5,18 @@ const translations: Translations = {
     en: "about me",
     pl: "o mnie",
   },
+
   about_text_paragraph_1: {
-    en: "I am a software developer with seven years of experience specializing in complex web development, with expertise spanning frontend as well as 'soft' backend technologies.",
-    pl: "Jestem programistką z siedmioletnim doświadczeniem w tworzeniu aplikacji webowych. Specjalizuję się w technologiach frontendowych, ale również w zagadnieniach backendowe",
+    en: "I am a full-stack software developer with 7+ years of experience in web application development. My core expertise is frontend engineering in JavaScript/TypeScript (React) with a strong focus on UI/UX and TDD. I also bring solid backend experience with Node.js, including REST/GraphQL API design, data flow implementation, and CI/CD practices.",
+    pl: "Jestem full-stack software developer z ponad siedmiomletnim doświadczeniem w tworzeniu aplikacji webowych. Moja specjalizacja to frontend engineering w JavaScript/TypeScript (React) z mocnym naciskiem na UI/UX i TDD. Dodatkowo posiadam solidne doświadczenie w backend engineering z Node.js, w tym projektowaniu REST/GraphQL API, implementacji przepływu danych oraz praktyk CI/CD.",
   },
   about_text_paragraph_2: {
-    en: "Over the course of my career, I've worked on diverse projects including a holiday rental service, news portal, financial data management platform, and SaaS application. My responsibilities span UI/UX development, client-server communication, testing, CI/CD and project leadership. My market research background enhances my ability to work with business clients and translate their needs into functional requirements.",
+    en: "Throughout my career, I have contributed to a wide range of projects, from holiday rental and news platforms to financial data tools, with occasional exposure to SaaS. I also gained some experience in client relations and in helping organize tasks within a small development team, using GitHub Projects. My academic background in economics and market research further supports me in understanding business perspectives and user needs.",
     pl: "W toku mojej kariery pracowałam nad różnorodnymi projektami, w tym serwisem wynajmu wakacyjnego, portalem informacyjnym, platformą do zarządzania danymi finansowymi oraz aplikacją SaaS. Moje obowiązki obejmowały tworzenie interfejsów użytkownika, zarządzanie komunikacją klient-serwer, testowanie, CI/CD oraz zarządzanie projektami. Doświadczenie w badaniach rynkowych pozwoliło mi rozwinąć umiejętność współpracy z klientami biznesowymi i tłumaczenie ich potrzeb na funkcjonalności.",
   },
   about_text_paragraph_3: {
-    en: "I am seeking job opportunities that will allow me to maximize my potential and further develop my skills and knowledge.",
-    pl: "Poszukuję pracy, która pozwoli mi jak najpełniej wykorzystać mój potencjał oraz dalej rozwijać wiedzę i umiejętności.",
+    en: "I am looking for opportunities to further develop my skills. While my frontend expertise is well established, I want to strengthen my backend experience and work on larger, scalable, cloud-based projects. I am also keen to stay up to date with AI-driven tools that seem to be shaping the future of software industry.",
+    pl: "Szukam możliwości dalszego rozwoju moich umiejętności. Chcę rozwinąć swoje doświadczenie w backend i pracować nad większymi, skalowalnymi, chmury bazowymi projektami. Jestem również zainteresowana pozostawaniem na bieżąco z narzędziami AI, które wydają się być przyszłością branży IT.",
   },
   about_github_invitation_text: {
     en: "I kindly invite you to look at my",
@@ -259,8 +260,8 @@ const translations: Translations = {
     pl: "VS Code",
   },
   jobs_eqt_title: {
-    en: "EQT Group",
-    pl: "EQT Group",
+    en: "EQT Group (contract via 7N)",
+    pl: "EQT Group (kontrakt przez 7N)",
   },
   jobs_eqt_subtitle: {
     en: "Full-stack Engineer",
@@ -271,8 +272,8 @@ const translations: Translations = {
     pl: "Rozwój narzędzi wewnętrznych do zarządzania dokumentami i analiz finansowych.",
   },
   jobs_eqt_responsibility_2: {
-    en: "References available upon request.",
-    pl: "Referencje dostępne na żądanie.",
+    en: "Excellent references available upon request.",
+    pl: "Świetne referencje dostępne na żądanie.",
   },
   jobs_stratokit_title: {
     en: "StratoKit SA",
@@ -291,8 +292,8 @@ const translations: Translations = {
     pl: "Projektowanie przepływu danych i integracja z API (SQLite, GraphQL, architektura zdarzeniowa w stylu Redux).",
   },
   jobs_stratokit_responsibility_3: {
-    en: "Established long-term, successful collaborations with clients; recognized for accurately identifying needs and delivering tailored technical solutions.",
-    pl: "Budowanie relacji z klientami; analiza ich potrzeb oraz dostarczanie dopasowanych rozwiązań technicznych.",
+    en: "Established long-term, successful collaborations with clients.",
+    pl: "Budowanie długoterminowych relacji z klientami.",
   },
   jobs_stratokit_responsibility_4: {
     en: "Contributed to the migration of the codebase from Webpack/Jest/Styled-components to Vite/Vitest/Tailwind.",
