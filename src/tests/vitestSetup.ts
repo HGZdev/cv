@@ -1,7 +1,8 @@
 // tests/mockServerSetup.ts
-import {afterAll, afterEach, beforeAll, beforeEach, vi} from "vitest";
-import {cleanup} from "@testing-library/react";
-import "jest-styled-components";
+import 'jest-styled-components';
+
+import { cleanup } from '@testing-library/react';
+import { afterAll, afterEach, beforeAll, beforeEach, vi } from 'vitest';
 
 beforeAll(() => {});
 

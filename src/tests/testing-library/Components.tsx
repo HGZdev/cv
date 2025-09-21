@@ -1,13 +1,14 @@
-import {RouterProvider, createMemoryRouter} from "react-router-dom";
-import GlobalStyles from "../../styles/GlobalStyles";
-import {render} from "@testing-library/react";
-import {I18nLang} from "../../../lib/i18n";
-import {createRoutes} from "../../client/Root";
+import { render } from '@testing-library/react';
+import { createMemoryRouter, RouterProvider } from 'react-router-dom';
+
+import { I18nLang } from '../../../lib/i18n';
+import { createRoutes } from '../../client/Root';
+import GlobalStyles from '../../styles/GlobalStyles';
 
 export const renderMockRoot = ({
-  langs = ["en", "pl"],
-  defaultLang = "en",
-  initialEntries = ["/"],
+  langs = ['en', 'pl'],
+  defaultLang = 'en',
+  initialEntries = ['/'],
 }: {
   langs?: I18nLang[];
   defaultLang?: I18nLang;
@@ -26,9 +27,9 @@ export const renderMockRoot = ({
   const renderResult = render(
     <>
       <GlobalStyles />
-      <RouterProvider router={router} future={{v7_startTransition: true}} />
+      <RouterProvider router={router} future={{ v7_startTransition: true }} />
     </>
   );
   // supposedly the only way to get current location for Data Router v6 in tests https://stackoverflow.com/a/73730116
-  return {render: renderResult, router};
+  return { render: renderResult, router };
 };

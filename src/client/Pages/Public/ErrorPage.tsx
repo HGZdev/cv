@@ -1,6 +1,6 @@
 // ErrorPage.tsx
-import React from "react";
-import {useRouteError, isRouteErrorResponse} from "react-router-dom";
+import React from 'react';
+import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
 
 const ErrorPage: React.FC = () => {
   const error = useRouteError();
@@ -26,11 +26,11 @@ const ErrorPage: React.FC = () => {
     }
   }
 
-  if (error) message = "Something went wrong";
+  if (error) message = 'Something went wrong';
   if (!error) message = `404: This page doesn't exist!`;
 
   return (
-    <div className="text-label-small text-onPrimary" data-testid="error-page">
+    <div className='text-label-small text-onPrimary' data-testid='error-page'>
       {message}
     </div>
   );

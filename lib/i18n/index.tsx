@@ -1,6 +1,6 @@
-import React, {createContext, useState, useContext} from "react";
+import React, { createContext, useContext, useState } from 'react';
 
-export type I18nLang = "en" | "pl";
+export type I18nLang = 'en' | 'pl';
 export type I18nKey = string;
 export type I18nLangText = string;
 
@@ -37,14 +37,14 @@ export const I18nProvider: React.FC<I18nProviderProps> = ({
   langs,
 }) => {
   if (!langs.length) {
-    throw new Error("langs cannot be empty.");
+    throw new Error('langs cannot be empty.');
   }
 
   const [lang, setLang] = useState<I18nLang>(defaultLang || langs[0]);
 
   const getText = (key: I18nKey, forceLang?: I18nLang): I18nLangText => {
     const translationObj = translations[key];
-    const selectedLang = forceLang || lang;
+    const selectedLang = forceLang ?? lang;
     const text = translationObj?.[selectedLang];
 
     if (!text) {
@@ -55,7 +55,7 @@ export const I18nProvider: React.FC<I18nProviderProps> = ({
   };
 
   return (
-    <I18nContext.Provider value={{lang, setLang, getText, langs}}>
+    <I18nContext.Provider value={{ lang, setLang, getText, langs }}>
       {children}
     </I18nContext.Provider>
   );
@@ -64,7 +64,7 @@ export const I18nProvider: React.FC<I18nProviderProps> = ({
 export const useLang = (): LangContextType => {
   const context = useContext(I18nContext);
   if (!context) {
-    throw new Error("useLang must be used within an I18nProvider");
+    throw new Error('useLang must be used within an I18nProvider');
   }
   return context;
 };

@@ -1,16 +1,16 @@
-import {MdOutlineStar, MdOutlineStarBorder} from "react-icons/md";
+import { MdOutlineStar, MdOutlineStarBorder } from 'react-icons/md';
 
-import AnimatedContainer from "../../AppComponents/AnimatedContainer";
-import {DividerLight} from "../../AppComponents/Divider";
-import ContentHeader from "../../AppComponents/ContentHeader";
+import { useLang } from '../../../../lib/i18n';
+import AnimatedContainer from '../../AppComponents/AnimatedContainer';
+import ContentHeader from '../../AppComponents/ContentHeader';
+import { DividerLight } from '../../AppComponents/Divider';
 import {
+  BlockProps,
   langSection,
+  SectionProps,
   techSection,
   toolsSection,
-  SectionProps,
-  BlockProps,
-} from "../../contentDb";
-import {useLang} from "../../../../lib/i18n";
+} from '../../contentDb';
 
 export const skillsSections: SectionProps[] = [
   langSection,
@@ -18,29 +18,29 @@ export const skillsSections: SectionProps[] = [
   toolsSection,
 ];
 
-export const Block = ({Icon, titleKey, stars = 0}: BlockProps) => {
-  const {getText} = useLang();
+export const Block = ({ Icon, titleKey, stars = 0 }: BlockProps) => {
+  const { getText } = useLang();
   return (
-    <div className="flex items-center gap-4 w-42">
-      <div className="flex flex-col items-center text-onPrimary w-16 gap-1">
+    <div className='flex items-center gap-4 w-42'>
+      <div className='flex flex-col items-center text-onPrimary w-16 gap-1'>
         {Icon && <Icon size={36} />}
-        <span className="text-label-small text-onTertiary text-center">
+        <span className='text-label-small text-onTertiary text-center'>
           {getText(titleKey!)}
         </span>
       </div>
-      <div className="flex gap-1">
-        {Array.from({length: stars}, (_, i) => (
+      <div className='flex gap-1'>
+        {Array.from({ length: stars }, (_, i) => (
           <MdOutlineStar
             key={`star-${i}`}
             size={22}
-            className="text-onSecondary"
+            className='text-onSecondary'
           />
         ))}
-        {Array.from({length: 5 - stars}, (_, i) => (
+        {Array.from({ length: 5 - stars }, (_, i) => (
           <MdOutlineStarBorder
             key={`empty-star-${i}`}
             size={22}
-            className="text-onBackground"
+            className='text-onBackground'
           />
         ))}
       </div>
@@ -48,14 +48,14 @@ export const Block = ({Icon, titleKey, stars = 0}: BlockProps) => {
   );
 };
 
-export const Section = ({headlineKey, blocks}: SectionProps) => {
-  const {getText} = useLang();
+export const Section = ({ headlineKey, blocks }: SectionProps) => {
+  const { getText } = useLang();
   return (
-    <div className="flex flex-col gap-2 py-2">
-      <span className="text-label-large text-onPrimary">
+    <div className='flex flex-col gap-2 py-2'>
+      <span className='text-label-large text-onPrimary'>
         {getText(headlineKey!)}
       </span>
-      <div className="flex flex-col gap-2">
+      <div className='flex flex-col gap-2'>
         {blocks?.map((b, i) => (
           <>
             <Blocks list={b.list} />
@@ -67,9 +67,9 @@ export const Section = ({headlineKey, blocks}: SectionProps) => {
   );
 };
 
-const Blocks = ({list}: {list: BlockProps[]}) => {
+const Blocks = ({ list }: { list: BlockProps[] }) => {
   return (
-    <div className="flex gap-4 flex-wrap">
+    <div className='flex gap-4 flex-wrap'>
       {list.map((props, i) => (
         <Block key={i} {...props} />
       ))}
@@ -78,16 +78,16 @@ const Blocks = ({list}: {list: BlockProps[]}) => {
 };
 
 const Skills = () => {
-  const {getText} = useLang();
+  const { getText } = useLang();
   return (
-    <AnimatedContainer className="p-4 md:p-8 bg-primary">
+    <AnimatedContainer className='p-4 md:p-8 bg-primary'>
       <ContentHeader
         {...{
-          title: getText("skills_title"),
-          tags: [getText("skills_tag_1"), getText("skills_tag_2")],
+          title: getText('skills_title'),
+          tags: [getText('skills_tag_1'), getText('skills_tag_2')],
         }}
       />
-      <div className="flex flex-col gap-4 py-2">
+      <div className='flex flex-col gap-4 py-2'>
         {skillsSections.map((s, i) => (
           <Section key={i} {...s} />
         ))}

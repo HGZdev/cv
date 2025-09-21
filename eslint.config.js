@@ -2,6 +2,8 @@ import typescript from '@typescript-eslint/eslint-plugin';
 import typescriptParser from '@typescript-eslint/parser';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
+import importPlugin from 'eslint-plugin-import';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
@@ -31,6 +33,8 @@ export default [
       '@typescript-eslint': typescript,
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
+      import: importPlugin,
+      'simple-import-sort': simpleImportSort,
     },
     rules: {
       'no-console': 'warn',
@@ -47,6 +51,11 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
+      // Import management rules
+      'import/no-unused-modules': 'error',
+      'import/no-duplicates': 'error',
+      'simple-import-sort/imports': 'error',
+      'simple-import-sort/exports': 'error',
     },
   },
   {
@@ -56,6 +65,9 @@ export default [
       'build',
       '.eslintrc.cjs',
       'eslint.config.js',
+      'postcss.config.js',
+      'tailwind.config.js',
+      'vite.config.ts',
     ],
   },
 ];

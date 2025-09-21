@@ -1,12 +1,12 @@
-import {useCallback} from "react";
-import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
+import { useCallback } from 'react';
 
 const useDownloadPDF = () => {
   const downloadPDF = useCallback(
-    async (ref: HTMLElement | null, fileName: string = "document.pdf") => {
+    async (ref: HTMLElement | null, fileName: string = 'document.pdf') => {
       if (!ref) {
-        console.error("Reference to the element is null");
+        console.error('Reference to the element is null');
         return;
       }
 
@@ -16,21 +16,21 @@ const useDownloadPDF = () => {
           useCORS: true,
         });
 
-        const imgData = canvas.toDataURL("image/webp");
-        const pdf = new jsPDF("p", "mm", "a4");
+        const imgData = canvas.toDataURL('image/webp');
+        const pdf = new jsPDF('p', 'mm', 'a4');
         const imgWidth = 210;
         const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-        pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+        pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
         pdf.save(fileName);
       } catch (error) {
-        console.error("Error generating PDF:", error);
+        console.error('Error generating PDF:', error);
       }
     },
     []
   );
 
-  return {downloadPDF};
+  return { downloadPDF };
 };
 
 export default useDownloadPDF;

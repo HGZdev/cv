@@ -1,13 +1,14 @@
-import React, {useRef} from "react";
-import {Outlet} from "react-router-dom";
-import {useTrackPageViewsInGA} from "../../../lib/GoogleAnalytics";
-import BgContainer from "./BgContainer";
-import Menu from "../AppComponents/Menu";
-import Hero from "../AppComponents/Hero";
-import getConfig from "./getConfig";
-import useScrollToTop from "./useScrollToTop";
+import React, { useRef } from 'react';
+import { Outlet } from 'react-router-dom';
 
-const {VITE_BASE_URL} = getConfig();
+import { useTrackPageViewsInGA } from '../../../lib/GoogleAnalytics';
+import Hero from '../AppComponents/Hero';
+import Menu from '../AppComponents/Menu';
+import BgContainer from './BgContainer';
+import getConfig from './getConfig';
+import useScrollToTop from './useScrollToTop';
+
+const { VITE_BASE_URL } = getConfig();
 
 const WrapRoute: React.FC = () => {
   useTrackPageViewsInGA();
@@ -17,16 +18,16 @@ const WrapRoute: React.FC = () => {
   const imgPath = `${VITE_BASE_URL}/images/bg.webp`;
 
   return (
-    <BgContainer imagePath={imgPath} className="flex justify-center bg-[300%]">
-      <div className="max-w-[82rem] grid grid-cols-12 h-screen md:p-8">
-        <div className="col-span-2 md:col-span-1 md:my-8 z-10 shadow-lg">
+    <BgContainer imagePath={imgPath} className='flex justify-center bg-[300%]'>
+      <div className='max-w-[82rem] grid grid-cols-12 h-screen md:p-8'>
+        <div className='col-span-2 md:col-span-1 md:my-8 z-10 shadow-lg'>
           <Menu />
         </div>
-        <div className="col-span-4 bg-primary hidden md:block">
+        <div className='col-span-4 bg-primary hidden md:block'>
           <Hero />
         </div>
         <div
-          className="relative col-span-10 md:col-span-7 md:my-8 overflow-y-scroll scrollbar-hide"
+          className='relative col-span-10 md:col-span-7 md:my-8 overflow-y-scroll scrollbar-hide'
           ref={scrollableRef}
         >
           <Outlet />
