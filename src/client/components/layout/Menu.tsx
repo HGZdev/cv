@@ -8,7 +8,7 @@ import {
 import { PiGraduationCap } from 'react-icons/pi';
 import { twMerge } from 'tailwind-merge';
 
-import { getConfig } from '../../../../lib/config';
+import getConfig from '../../../../lib/config';
 import { useActiveRoute } from '../../../../lib/routing';
 import { resumeConfig } from '../../domains/index.ts';
 import LangLink from '../common/LangLink';

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import { getConfig } from '../../../../lib/config';
+import getConfig from '../../../../lib/config';
 import { useTrackPageViewsInGA } from '../../../../lib/GoogleAnalytics';
 import { useScrollToTop } from '../../../../lib/utils';
 import BgContainer from '../../components/common/BgContainer';

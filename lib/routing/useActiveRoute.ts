@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 
-import { getConfig } from '../config';
+import getConfig from '../config';
 import { useLang } from '../i18n';
 
 const { BASE_URL } = getConfig();

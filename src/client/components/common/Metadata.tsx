@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 
-import { getConfig } from '../../../../lib/config';
+import getConfig from '../../../../lib/config';
 import { fullName } from '../../domains/personal/data';
 
 const { BASE_URL, VITE_APP_NAME } = getConfig();

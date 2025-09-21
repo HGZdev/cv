@@ -4,7 +4,7 @@ import { MdOutlineEmail, MdPhoneIphone } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { twMerge } from 'tailwind-merge';
 
-import { getConfig } from '../../../../lib/config';
+import getConfig from '../../../../lib/config';
 import {
   email,
   firstName,

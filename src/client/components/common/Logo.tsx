@@ -1,4 +1,4 @@
-import { getConfig } from '../../../../lib/config';
+import getConfig from '../../../../lib/config';
 
 const { BASE_URL } = getConfig();
 

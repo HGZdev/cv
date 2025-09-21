@@ -1,7 +1,7 @@
 import React, { createContext, useCallback, useEffect, useState } from 'react';
 import ReactGA from 'react-ga4';
 
-import { getConfig } from '../config';
+import getConfig from '../config';
 
 const { VITE_GA_TOKEN } = getConfig();
 

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { twMerge } from 'tailwind-merge';
 
-import { getConfig } from '../../../../lib/config';
+import getConfig from '../../../../lib/config';
 import { I18nLang, useLang } from '../../../../lib/i18n';
 
 const { VITE_HASH_ROUTER } = getConfig();

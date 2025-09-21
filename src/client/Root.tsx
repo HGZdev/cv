@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom';
 
 import translations from '../../data/translations.ts';
-import { getConfig } from '../../lib/config';
+import getConfig from '../../lib/config';
 import { GoogleAnalyticsProvider } from '../../lib/GoogleAnalytics';
 import { I18nLang, I18nProvider } from '../../lib/i18n/index.tsx';
 import ErrorPage from './components/common/ErrorPage.tsx';

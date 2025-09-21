@@ -4,7 +4,7 @@ import { MdOutlineStar, MdOutlineStarBorder } from 'react-icons/md';
 import { PiPrinter } from 'react-icons/pi';
 import { useReactToPrint } from 'react-to-print';
 
-import { getConfig } from '../../../../lib/config';
+import getConfig from '../../../../lib/config';
 import { useTrackPageViewsInGA } from '../../../../lib/GoogleAnalytics';
 import { I18nLang, useLang } from '../../../../lib/i18n';
 import { BgContainer } from '../../components';
