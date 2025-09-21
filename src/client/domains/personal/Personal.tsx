@@ -140,7 +140,9 @@ const Personal = () => {
           {getText('about_github_invitation_text')}{' '}
           <a
             href='https://github.com/HGZdev'
-            className='text-primaryResume underline underline-offset-2 hover:text-onPrimary'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='text-onSecondary underline underline-offset-2 hover:text-onPrimary transition-colors duration-300'
           >
             {getText('about_github_link_text')}
           </a>
