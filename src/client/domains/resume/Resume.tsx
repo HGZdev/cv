@@ -232,7 +232,7 @@ const keySkillsI18nMap = [
   [
     { en: 'Frontend Focus', pl: 'Specjalizacja frontendowa' },
     { en: 'JavaScript / TypeScript', pl: 'JavaScript / TypeScript' },
-    { en: 'React.js', pl: 'React.js' },
+    { en: 'React.js 18+', pl: 'React.js 18+' },
     { en: 'HTML / CSS', pl: 'HTML / CSS' },
     {
       en: 'Test-driven development',
@@ -245,7 +245,7 @@ const keySkillsI18nMap = [
       en: 'Backend Experience',
       pl: 'Doświadczenie w technologiach serwerowych',
     },
-    { en: 'Node.js', pl: 'Node.js' },
+    { en: 'Node.js / Express.js', pl: 'Node.js / Express.js' },
     { en: 'SQL / SQLite / PostgreSQL', pl: 'SQL / SQLite / PostgreSQL' },
     {
       en: 'API Integration: REST / GraphQL',
@@ -255,19 +255,20 @@ const keySkillsI18nMap = [
     { en: 'CI/CD', pl: 'CI/CD' },
   ],
   [
+    { en: 'Economics, Market Research', pl: 'Ekonomia, Badania Rynkowe' },
     {
       en: 'Adaptability & Fast Learning',
       pl: 'Szybka adaptacja i nauka',
     },
     {
-      en: 'Excellent Interpersonal Communication',
-      pl: 'Bardzo dobra komunikacja interpersonalna',
-    },
-    {
       en: 'Agile Methodologies Knowledge',
       pl: 'Znajomość metod Agile',
     },
-    { en: 'Client Liaison', pl: 'Współpraca z klientem biznesowym' },
+    {
+      en: 'Comunication Skills',
+      pl: 'Umiejętności komunikacji',
+    },
+    { en: 'Client Liaison Experience', pl: 'Współpraca z klientem biznesowym' },
     { en: `Pixel-perfect Approach`, pl: `Dbałość o detale (Pixel-perfect)` },
   ],
 ];

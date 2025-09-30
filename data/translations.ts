@@ -7,16 +7,17 @@ const translations: Translations = {
   },
 
   about_text_paragraph_1: {
-    en: 'I am a full-stack software developer with 7+ years of experience in web application development. My core expertise is frontend engineering in JavaScript/TypeScript (React) with a strong focus on UI/UX and TDD. I also bring solid backend experience with Node.js, including REST/GraphQL API design, data flow implementation, and CI/CD practices.',
-    pl: 'Jestem full-stack software developer z ponad siedmiomletnim doświadczeniem w tworzeniu aplikacji webowych. Moja specjalizacja to frontend engineering w JavaScript/TypeScript (React) z mocnym naciskiem na UI/UX i TDD. Dodatkowo posiadam solidne doświadczenie w backend engineering z Node.js, w tym projektowaniu REST/GraphQL API, implementacji przepływu danych oraz praktyk CI/CD.',
+    en: 'I am a software developer with 7+ years of experience in web application development. My core expertise is frontend engineering in JavaScript/TypeScript (React) with a strong focus on UI/UX and TDD. I also bring solid backend experience with Node.js, including REST/GraphQL API design, data flow implementation, and CI/CD practices.',
+    pl: 'Jestem programistką z ponad siedmiomletnim doświadczeniem w tworzeniu aplikacji webowych. Moja specjalizacja to frontend engineering w JavaScript/TypeScript (React) z mocnym naciskiem na UI/UX i TDD. Dodatkowo posiadam solidne doświadczenie w backend engineering z Node.js, w tym projektowaniu REST/GraphQL API, implementacji przepływu danych oraz praktyk CI/CD.',
   },
   about_text_paragraph_2: {
     en: 'Throughout my career, I have contributed to a wide range of projects, from holiday rental and news platforms to financial data tools, with occasional exposure to SaaS. I also gained some experience in client relations and in helping organize tasks within a small development team, using GitHub Projects. My academic background in economics and market research further supports me in understanding business perspectives and user needs.',
     pl: 'W toku mojej kariery pracowałam nad różnorodnymi projektami, w tym serwisem wynajmu wakacyjnego, portalem informacyjnym, platformą do zarządzania danymi finansowymi oraz aplikacją SaaS. Moje obowiązki obejmowały tworzenie interfejsów użytkownika, zarządzanie komunikacją klient-serwer, testowanie, CI/CD oraz zarządzanie projektami. Doświadczenie w badaniach rynkowych pozwoliło mi rozwinąć umiejętność współpracy z klientami biznesowymi i tłumaczenie ich potrzeb na funkcjonalności.',
   },
   about_text_paragraph_3: {
-    en: 'I am looking for opportunities to further develop my skills. While my frontend expertise is well established, I want to strengthen my backend experience and work on larger, scalable, cloud-based projects. I am also keen to stay up to date with AI-driven tools that seem to be shaping the future of software industry.',
-    pl: 'Szukam możliwości dalszego rozwoju moich umiejętności. Chcę rozwinąć swoje doświadczenie w backend i pracować nad większymi, skalowalnymi, chmury bazowymi projektami. Jestem również zainteresowana pozostawaniem na bieżąco z narzędziami AI, które wydają się być przyszłością branży IT.',
+    en: 'I am looking for opportunities to further develop my skills. Frontend engineering remains my main strength and passion, while I am also seeking opportunities to expand my backend expertise and contribute to scalable, cloud-based projects. I am keen to stay up to date with AI-driven tools shaping the future of the software industry.',
+
+    pl: 'Szukam pracy, która pozwoli mi dalej rozwijać umiejętności – frontend pozostaje moją główną specjalizacją i pasją, a równolegle poszerzam doświadczenie backendowe i chętnie angażuję się w projekty skalowalne, chmurowe. Zależy mi również na pozostawaniu na bieżąco z narzędziami AI, które kształtują przyszłość branży IT.',
   },
   about_github_invitation_text: {
     en: 'I kindly invite you to look at my GitHub',
@@ -280,8 +281,8 @@ const translations: Translations = {
     pl: 'StratoKit SA',
   },
   jobs_stratokit_subtitle: {
-    en: 'JavaScript Developer',
-    pl: 'JavaScript Developer',
+    en: 'Software Developer',
+    pl: 'Programista oprogramowania',
   },
   jobs_stratokit_responsibility_1: {
     en: 'Full-stack development of web applications (React, Typescript, Tailwind, Vitest, Node.js).',
@@ -508,7 +509,7 @@ const translations: Translations = {
     pl: 'Doświadczenie w zarządzaniu projektami',
   },
   skills_client_liaison: {
-    en: 'Client Liaison',
+    en: 'Client Liaison Experience',
     pl: 'Współpraca z Klientami Biznesowymi',
   },
   experience_title: {
@@ -520,7 +521,7 @@ const translations: Translations = {
     pl: 'Siedem lat doświadczenia w branży IT',
   },
   experience_tag_2: {
-    en: 'Client Liaison',
+    en: 'Client Liaison Experience',
     pl: 'Współpraca z klientami biznesowymi',
   },
   experience_tag_3: {

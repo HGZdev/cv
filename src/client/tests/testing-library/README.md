@@ -109,7 +109,7 @@ it('renders personal information correctly', () => {
 
   expect(screen.getByText('Hanna')).toBeInTheDocument();
   expect(screen.getByText('Gaudasińska-Zapaśnik')).toBeInTheDocument();
-  expect(screen.getByText('Full-stack Developer')).toBeInTheDocument();
+  expect(screen.getByText('JavaScript Developer')).toBeInTheDocument();
 });
 ```
 

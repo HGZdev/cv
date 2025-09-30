@@ -5,7 +5,7 @@ export const personalData: PersonalData = {
   firstName: 'Hanna',
   lastName: 'Gaudasińska-Zapaśnik',
   fullName: 'Hanna Gaudasińska-Zapaśnik',
-  jobTitle: 'Full-stack Developer',
+  jobTitle: 'Software Developer',
   email: decodeString('ih{/efwjAhnbjm/dpn'),
   phone: decodeString(',59617153:48'),
   www: 'https://hgzdev.github.io/cv',
@@ -67,7 +67,7 @@ export const hobbiesSection: PersonalSection = {
   headlineKey: 'hobbies_headline',
   blocks: [
     {
-      list: [{ titleKey: 'hobbies_headline', descKey: 'hobbies_desc' }],
+      list: [{ titleKey: '', descKey: 'hobbies_desc' }],
     },
   ],
 };

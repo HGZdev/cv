@@ -437,7 +437,7 @@ interface MetadataProps {
 
 <Metadata
   title="Hanna Gaudasińska-Zapaśnik - CV"
-  description="Full-stack developer CV"
+  description="Software developer CV"
   keywords={['developer', 'react', 'typescript']}
 />
 ```

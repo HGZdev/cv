@@ -46,7 +46,7 @@ export const keySkillsData: KeySkill[][] = [
       pl: 'Bardzo dobra komunikacja interpersonalna',
     },
     { en: 'Agile Methodologies Knowledge', pl: 'Znajomość metod Agile' },
-    { en: 'Client Liaison', pl: 'Współpraca z klientem biznesowym' },
+    { en: 'Client Liaison Experience', pl: 'Współpraca z klientem biznesowym' },
     { en: 'Pixel-perfect Approach', pl: 'Dbałość o detale (Pixel-perfect)' },
   ],
 ];
